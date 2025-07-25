@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hire My Room</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+    }
+
+    .top-bar {
+      background: #0066e6;
+      color: #fff;
+      padding: 0;
+      height: 28px;
+      display: flex;
+      align-items: center;
+    }
+
+    .top-bar span {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 80px;
+      color: #9dd6e4;
+      font-size: 15px;
+      display: block;
+      text-align: left;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .top-bar a {
+      font-size: 12px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s, font-size 0.2s;
+    }
+
+    .top-bar a:hover {
+      color: #ffda33;
+      font-size: 1.14em;
+    }
+
+    header {
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.01);
+      min-height: 50px;
+      padding: 0 62px;
+      margin: 23px 0;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .nav-container {
+      min-height: 50px;
+      padding: 22px 0 18px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-container {
+      padding: 0 16px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .logo .blue {
+      color: #0066e6;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 36px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      position: relative;
+      padding: 2rem 0;
+      color: #444;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    nav a::after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 60%;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: #0066e6;
+      transform: translateX(-60%);
+      transition: 0.4s ease-out;
+    }
+
+    nav a.active,
+    nav a:hover {
+      color: #0066e6;
+    }
+
+    nav a.active::after,
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      background-image: url('interior-2685521_640.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      position: relative;
+      height: 300px;
+    }
+
+    .hero-link {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .hero-link:hover {
+      color: #007bff;
+    }
+
+
+    .hero::after {
+      content: '';
+      background: rgba(0, 0, 0, 0.4);
+      position: absolute;
+      inset: 0;
+    }
+
+    .hero h1,
+    .hero p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero p {
+      margin: 0;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      margin-top: 10px;
+    }
+
+
+    .section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 5px 10px;
+    }
+
+    .section h2 {
+      font-size: 35px;
+      font-family: 'Times New Roman', Times, serif;
+
+    }
+
+    .section p {
+      font-size: 18px;
+      line-height: 1.7;
+      color: rgb(134, 134, 134);
+    }
+
+    .team {
+      padding-bottom: 10px;
+    }
+
+    .member {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 40px;
+    }
+
+    .member img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 20px;
+    }
+
+    .member h3 {
+      margin: 0 0 6px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .member p {
+      margin: 0;
+      color: rgb(134, 134, 134);
+      line-height: 1.6;
+    }
+
+    .hero a:hover {
+      color: #007bff;
+      font-size: 20px;
+    }
+
+    ul li {
+      font-size: 18px;
+      color: rgb(134, 134, 134)
+    }
+
+    .contact {
+      background-color: rgb(223, 223, 223);
+      height: 300px;
+
+    }
+
+    .contact div {
+      text-align: center;
+      padding-top: 40px;
+
+    }
+
+    .contact h2 {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 30px;
+    }
+
+    .contact p {
+      font-size: 18px;
+      color: rgb(134, 134, 134)
+    }
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    footer {
+      background: #232323;
+      color: #fff;
+      margin-top: 0;
+    }
+
+    footer {
+      background: #232323;
+      color: #fff;
+      margin-top: 0;
+    }
+
+    .footer-main {
+      padding: 40px 0;
+    }
+
+    .footer-bottom {
+      background: #181818;
+      padding: 14px 0;
+      font-size: 1rem;
+      color: #808080;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .footer-col {
+      flex: 1 1 180px;
+      min-width: 180px;
+    }
+
+    .footer-col h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 28px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul li a:hover {
+      color: #0066e6;
+    }
+
+    .footer-link {
+      color: #0066e6;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .footer-link:hover {
+      text-decoration: underline;
+    }
+
+    .tagline {
+      color: #bdbdbd;
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .types {
+      display: flex;
+      gap: 10px;
+    }
+
+    .type-btn {
+      background: #232323;
+      border: 1.5px solid #555;
+      color: #fff;
+      border-radius: 4px;
+      padding: 4px 14px;
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+      display: inline-block;
+    }
+
+    .subscribe-form {
+      display: flex;
+      margin-bottom: 18px;
+    }
+
+    .subscribe-form input[type="email"] {
+      padding: 10px;
+      border: none;
+      border-radius: 4px 0 0 4px;
+      font-size: 1rem;
+      background: #333;
+      color: #fff;
+      width: 70%;
+    }
+
+    .subscribe-btn {
+      background: #0066e6;
+      color: #fff;
+      border: none;
+      border-radius: 0 4px 4px 0;
+      padding: 0 18px;
+      font-size: 1.3rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .subscribe-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: #fff;
+    }
+
+    .subscribe-btn:hover {
+      background: #004bb5;
+    }
+
+    .footer-social {
+      margin-top: 10px;
+    }
+
+    .footer-social span {
+      display: block;
+      margin-bottom: 28px;
+      color: #bdbdbd;
+      margin-bottom: 1;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: transparent;
+      border: 1.5px solid #555;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 1.2rem;
+      transition: background 0.2s, border 0.2s;
+      margin-right: 6px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.5s cubic-bezier(.4, 1.7, .6, .95), transform 0.5s cubic-bezier(.4, 1.7, .6, .95);
+    }
+
+    .social-icons a:last-child {
+      margin-right: 0;
+    }
+
+    .social-icons a svg {
+      width: 22px;
+      height: 22px;
+      fill: #fff;
+    }
+
+    .social-icons a:hover {
+      background: #0066e6;
+      border-color: #0066e6;
+    }
+
+    .social-icons a.animated {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .icon-x::before,
+    .icon-fb::before,
+    .icon-ig::before {
+      content: none;
+    }
+
+    .footer-bottom-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-heart {
+      color: #888;
+      font-size: 1.1rem;
+    }
+
+    .footer-links a {
+      color: #888;
+      margin-left: 18px;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    @media (max-width: 900px) {
+      .footer-container {
+        flex-direction: column;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 700px) {
+
+      .footer-container,
+      .footer-bottom-container {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 1rem !important;
+      }
+
+      .footer-col {
+        width: 100% !important;
+        margin-bottom: 1rem !important;
+      }
+    }
+
+    .alert-bar {
+      display: none;
+      background-color: #dc3545;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 9999;
+    }
+
+
+
+    .alert-bar.success {
+      background-color: #28a745 !important;
+    }
+
+
+
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        padding: 10px;
+      }
+
+      .navbar nav {
+        margin-top: 10px;
+      }
+
+      .member {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .member img {
+        margin: 0 0 15px;
+      }
+    }
+
+    /* Responsive Navbar Styles */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #888;
+      cursor: pointer;
+      padding: 8px 12px;
+      align-items: center;
+      height: 40px;
+    }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0;
+      position: relative;
+      height: 60px;
+    }
+    .logo {
+      flex: 0 0 auto;
+      margin-right: auto;
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+    nav ul {
+      display: flex;
+      gap: 36px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    @media (max-width: 900px) {
+      .menu-toggle {
+        display: flex;
+      }
+      #main-nav {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90vw;
+        max-width: 400px;
+        margin: 12px 0 0 0;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        border-radius: 8px;
+        z-index: 1000;
+        display: none;
+        overflow: hidden;
+      }
+      #main-nav.active {
+        display: block;
+      }
+      #main-nav ul {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+      }
+      #main-nav ul li {
+        width: 100%;
+      }
+      #main-nav ul li a {
+        width: 100%;
+        display: block;
+        padding: 12px 18px;
+        border-bottom: 1px solid #eee;
+      }
+    }
+    @media (min-width: 901px) {
+      .menu-toggle {
+        display: none !important;
+      }
+      #main-nav ul {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        background: none;
+        box-shadow: none;
+        gap: 36px;
+      }
+    }
+    @media (max-width: 700px) {
+      .nav-container {
+        padding: 0 6px;
+      }
+      .logo {
+        font-size: 20px;
+      }
+      .menu-toggle {
+        font-size: 1.1rem;
+        padding: 6px 8px;
+        height: 36px;
+      }
+    }
+    /* Align mobile menu to right */
+    @media (max-width: 900px) {
+      nav ul {
+        left: auto;
+        right: 0;
+        width: 80vw;
+        min-width: 180px;
+        max-width: 320px;
+        text-align: left;
+        border-radius: 0 0 0 12px;
+        background: #fff;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        z-index: 1099;
+        border: 1px solid #eee;
+        gap: 18px;
+        padding: 18px 0;
+      }
+      nav ul li {
+        width: 100%;
+        text-align: left;
+        padding: 0 18px;
+      }
+      nav ul li a {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+      }
+    }
+    /* Add horizontal space to body content */
+    @media (max-width: 900px) {
+      .section, .team, .contact {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+    }
+    @media (min-width: 901px) {
+      .section, .team, .contact {
+        padding-left: 32px;
+        padding-right: 32px;
+      }
+    }
+    /* Footer spacing improvements */
+    .footer-main {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+    .footer-container {
+      gap: 18px;
+    }
+    @media (max-width: 700px) {
+      .footer-main {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+      .footer-container {
+        gap: 8px !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="alertBar" class="alert-bar"></div>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <span>Phone no: <a href="tel:+923228441665">+923228441665</a> or email us:
+      <a href="mailto:info@hiremyroom.com">info@hiremyroom.com</a></span>
+  </div>
+  <!-- Header/Nav -->
+  <header>
+    <div class="container nav-container">
+      <div class="logo">
+        <span>Hire my <span class="blue">Room</span></span>
+      </div>
+      <button class="menu-toggle" aria-label="Open menu">&#9776; MENU</button>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="../Home/index.html">Home</a></li>
+          <li><a href="../Rooms/rooms.html">Rooms</a></li>
+          <li><a href="../Apartments/apartment.html">Apartments</a></li>
+          <li><a href="../Blog/blog.html">Blog</a></li>
+          <li><a href="../About/about.html" class="active">About</a></li>
+          <li><a href="../Login/login.html">Login</a></li>
+          <li><a href="../SignUp/SignUp.html">Sign up</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div style="padding-top: 60px;">
+      <h1>About Us</h1>
+    </div>
+  </div>
+
+
+  <div class="section">
+    <h2>Our Story</h2>
+    <p>
+      At Hire My Room, we were founded with a singular mission: to transform the rental market by bridging the gap
+      between property owners and renters.
+      Recognizing the challenges homeowners face in finding trustworthy tenants and the struggles renters encounter in
+      securing reliable properties,
+      we created an innovative platform that simplifies the process. Hire My Room offers a fast, efficient, and
+      transparent solution for both parties.
+      Whether you’re seeking a long–term rental, a vacation home, or a short–term stay, our platform ensures a seamless
+      and hassle–free experience, built on trust and confidence.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Our Vision</h2>
+    <p>
+      Hire My Room aspires to be the global leader in property rental solutions.
+      We envision a future where property owners are empowered with cutting–edge tools to manage listings, attract ideal
+      tenants, and maximize rental income.
+      For renters, we aim to redefine the search for the perfect home by offering unparalleled security, trust, and
+      flexibility.
+      Through technology and transparency, we are committed to revolutionizing the rental experience for everyone.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Our Mission</h2>
+    <p>
+      Our mission is to deliver a seamless, secure, and user-friendly rental platform that fosters trust and
+      collaboration between property owners and renters.
+      We are dedicated to simplifying every step of the rental journey—from listing to booking—ensuring a smooth,
+      efficient, and stress–free experience for all users.
+    </p>
+  </div>
+
+  <div class="section team">
+    <h2>Meet Our Team</h2>
+
+    <div class="member">
+      <img src="https://randomuser.me/api/portraits/men/10.jpg" alt="CEO">
+      <div>
+        <h3>CEO – Mustansar Ali Khan</h3>
+        <p>
+          As the visionary leader of Hire My Room, our CEO drives the company’s strategic direction, ensuring innovation
+          and excellence in every aspect of our platform.
+          With a passion for solving real–world challenges, Mustansar Ali Khan has built Hire My Room into a trusted
+          name in the rental industry.
+        </p>
+      </div>
+    </div>
+
+    <div class="member">
+      <img src="https://randomuser.me/api/portraits/men/11.jpg" alt="Abdullah Atiq">
+      <div>
+        <h3>Head of Technical Department – Abdullah Atiq</h3>
+        <p>
+          Abdullah Atiq brings extensive expertise in software development and system architecture to the table.
+          As the Head of Technical Department, he leads the development of our platform, ensuring it remains fast,
+          secure, and user–friendly.
+          His commitment to innovation keeps Hire My Room at the forefront of technological advancements in the rental
+          market.
+        </p>
+      </div>
+    </div>
+
+    <div class="member">
+      <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="Muhammad Ahmad Tariq">
+      <div>
+        <h3>Head of Operations – Muhammad Ahmad Tariq</h3>
+        <p>
+          Muhammad Ahmad Tariq oversees all operational activities at Hire My Room, ensuring a seamless and reliable
+          experience for our users.
+          His meticulous attention to detail and strategic approach to operations have been instrumental in scaling our
+          platform to meet growing demand.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section">
+    <h2>Why Choose Hire My Room?</h2>
+    <ul>
+      <li><strong>Trust & Transparency:</strong> We prioritize security and honesty, creating a safe and reliable rental
+        experience for all users.</li>
+      <li><strong>Wide Range of Properties:</strong> From single rooms to full homes, our platform caters to a wide
+        range of rental needs.</li>
+      <li><strong>User-Friendly Interface:</strong> Our intuitive platform is designed for ease of use, making renting
+        and listing properties effortless.</li>
+      <li><strong>24/7 Support:</strong> Our dedicated support team is available around the clock to assist you with any
+        queries or concerns.</li>
+      <li><strong>Optimized Rental Management:</strong> Property owners benefit from advanced tools to manage listings,
+        attract tenants, and maximize rental income.</li>
+    </ul>
+  </div>
+  <div class="contact">
+    <div>
+      <h2>Contact US</h2>
+      <p>Email: hiremyroom@gmail.com</p>
+      <p> Phone: +92-340-4232892 , +92-326-5947033</p>
+      <p>Address: Joahr Town Sector B</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-main">
+      <div class="container footer-container">
+        <div class="footer-col">
+          <h3>Hire My Room</h3>
+          <p class="tagline">Where Renting Feels Right.</p>
+          <a href="../Home/index.html" class="footer-link">Read more &rarr;</a>
+        </div>
+        <div class="footer-col">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="">Review</a></li>
+            <li><a href="../Blog/blog.html">Blog</a></li>
+            <li><a href="../About/about.html">About</a></li>
+            <li><a href="../Rooms/rooms.html">Rooms</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Types</h3>
+          <div class="types">
+            <span class="type-btn">Apartment</span>
+            <span class="type-btn">Room</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Subscribe</h3>
+          <form class="subscribe-form">
+            <input type="email" placeholder="Enter email address">
+            <button type="submit" class="subscribe-btn" aria-label="Send">
+              <svg viewBox="0 0 24 24">
+                <path d="M2 21l21-9-21-9v7l15 2-15 2z" />
+              </svg>
+            </button>
+          </form>
+          <div class="footer-social">
+            <span>Follow us</span>
+            <div class="social-icons">
+              <a href="https://twitter.com/" class="icon-x" aria-label="X">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M17.53 6.47a.75.75 0 0 0-1.06 0L12 10.94 7.53 6.47a.75.75 0 1 0-1.06 1.06L10.94 12l-4.47 4.47a.75.75 0 1 0 1.06 1.06L12 13.06l4.47 4.47a.75.75 0 0 0 1.06-1.06L13.06 12l4.47-4.47a.75.75 0 0 0 0-1.06z" />
+                </svg>
+              </a>
+              <a href="https://facebook.com/" class="icon-fb" aria-label="Facebook">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0" />
+                </svg>
+              </a>
+              <a href="https://instagram.com/" class="icon-ig" aria-label="Instagram">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.241 1.308 3.608.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.241 1.246-3.608 1.308-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.241-1.308-3.608C2.175 15.747 2.163 15.367 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608C4.515 2.497 5.782 2.225 7.148 2.163 8.414 2.105 8.794 2.163 12 2.163zm0-2.163C8.741 0 8.332.012 7.052.07 5.771.128 4.659.334 3.678 1.315c-.98.98-1.187 2.092-1.245 3.373C2.012 5.668 2 6.077 2 12c0 5.923.012 6.332.07 7.612.058 1.281.265 2.393 1.245 3.373.98.98 2.092 1.187 3.373 1.245C8.332 23.988 8.741 24 12 24s3.668-.012 4.948-.07c1.281-.058 2.393-.265 3.373-1.245.98-.98 1.187-2.092 1.245-3.373.058-1.28.07-1.689.07-7.612 0-5.923-.012-6.332-.07-7.612-.058-1.281-.265-2.393-1.245-3.373-.98-.98-2.092-1.187-3.373-1.245C15.668.012 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-container">
+        <p>Copyright © 2025 All rights reserved | <span class="footer-heart">&#10084;</span> hiremyroom.com</p>
+        <div class="footer-links">
+          <a href="">Terms</a>
+          <a href="">Privacy</a>
+          <a href="">Compliances</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    function my() {
+      const input = document.getElementById("ammar");
+      input.style.border = "1px solid skyblue";
+      input.style.borderRadius = "10px";
+    }
+
+    function showBar(message, type = "error") {
+      const alertBar = document.getElementById("alertBar");
+      alertBar.textContent = message;
+
+      if (type === "success") {
+        alertBar.classList.add("success");
+      } else {
+        alertBar.classList.remove("success");
+      }
+
+      alertBar.style.display = "block";
+
+      setTimeout(() => {
+        alertBar.style.display = "none";
+      }, 2000);
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // Email submit handler
+      var ammar1 = document.getElementById("ammar1");
+      if (ammar1) {
+        ammar1.addEventListener("click", function () {
+          const email = document.getElementById("ammar").value.trim();
+          const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+          if (!isValidEmail) {
+            showBar("❌ Please enter a valid email before submitting!", "error");
+          } else {
+            showBar("✅ Email submitted successfully!", "success");
+          }
+        });
+      }
+
+      // Social icon animation
+      document.querySelectorAll('.social-icons a').forEach(function (el, i) {
+        setTimeout(function () {
+          el.classList.add('animated');
+        }, 100 * i);
+      });
+    });
+
+    window.addEventListener('scroll', function () {
+      const hero = document.querySelector('.hero');
+      if (!hero) return;
+      const scrolled = window.pageYOffset;
+      hero.style.backgroundPosition = 'center ' + (scrolled * 0.4) + 'px';
+    });
+
+    // Animate hero-left on page load
+    window.addEventListener('DOMContentLoaded', function () {
+      var heroLeft = document.querySelector('.hero-left');
+      if (heroLeft) {
+        setTimeout(function () {
+          heroLeft.classList.add('animated');
+        }, 200);
+      }
+
+      // Animate social icons when in view
+      var icons = document.querySelectorAll('.social-icons a');
+      var iconsAnimated = false;
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && !iconsAnimated) {
+            icons.forEach(function (icon, i) {
+              setTimeout(function () {
+                icon.classList.add('animated');
+              }, i * 200);
+            });
+            iconsAnimated = true;
+          }
+        });
+      }, { threshold: 0.3 });
+
+      if (icons.length) {
+        observer.observe(icons[0].parentElement);
+      }
+    });
+
+    // Responsive menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const mainNav = document.getElementById('main-nav');
+      if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', function() {
+          mainNav.classList.toggle('active');
+        });
+        // Close menu when a link is clicked (for mobile)
+        mainNav.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', function() {
+            mainNav.classList.remove('active');
+          });
+        });
+      }
+    });
+  </script>
+</body>
+
+
+</html>

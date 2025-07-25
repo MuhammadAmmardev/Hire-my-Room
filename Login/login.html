@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hire my Room</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+
+<body>
+    <div id="top-alert" class="top-alert" style="display:none;"></div>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <span>Phone no: <a href="tel:+923228441665">+923228441665</a> or email us: <a
+                href="mailto:info@hiremyroom.com">info@hiremyroom.com</a></span>
+    </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-left">
+                <p class="welcome">Welcome to Hire My Room</p>
+                <h1>Get property on cheap prices</h1>
+                <div class="hero-buttons">
+                    <a href="../Home/index.html" class="btn btn-primary">HOME</a>
+                    <a href="../About/about.html" class="btn btn-outline">ABOUT US</a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <form class="login-form" id="loginForm">
+                    <h2>Sign in as<br>Guest/Owner</h2>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <div class="form-row checkbox-row">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember Me</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign In</button>
+                    
+                    <a href="#" class="forgot">Forgot Your Password?</a>
+
+                    <div class="google-signin-container">
+                        <button type="button" id="googleSigninBtn" class="btn btn-google">
+                            <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google logo" style="width:20px; vertical-align:middle; margin-right:8px;"> Sign in with Google
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script>
+    // Demo Users List
+        const users = [
+        { email: "ammar@hmr.com", password: "owner123", type: "owner" },
+        { email: "faiz@hmr.com", password: "user123", type: "user" }
+        ];
+
+        // 🔐 Standard Email/Password Sign In
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const email = this.querySelector('input[type="email"]').value;
+        const password = this.querySelector('input[type="password"]').value;
+        const alertBar = document.getElementById('top-alert');
+
+        const user = users.find(u => u.email === email && u.password === password);
+
+        if (!user) {
+            if (alertBar) {
+            alertBar.textContent = "Wrong credentials! Please enter correct credentials.";
+            alertBar.classList.add('error');
+            alertBar.style.display = 'block';
+            setTimeout(() => alertBar.style.display = 'none', 3000);
+            }
+            return;
+        } else {
+            if (alertBar) alertBar.style.display = 'none';
+        }
+
+        if (user.type === "owner") {
+            window.location.href = "../Owner/index.html";
+        } else {
+            sessionStorage.setItem('showLoginSuccess', '1');
+            window.location.href = "../Home/index.html";
+        }
+        });
+
+        // ✅ Google Sign-In Integration
+        let tokenClient;
+
+        document.addEventListener('DOMContentLoaded', function () {
+        tokenClient = google.accounts.oauth2.initTokenClient({
+            client_id: '439859914693-jk0ep8cece1m5ib4enk3616ckgtb4a0p.apps.googleusercontent.com', // Replace with your real client ID
+            scope: 'email profile openid',
+            callback: (tokenResponse) => {
+            const jwt = tokenResponse.access_token;
+
+            fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+                headers: {
+                Authorization: `Bearer ${jwt}`
+                }
+            })
+                .then(res => res.json())
+                .then(user => {
+                console.log("✅ Google User Info:", user);
+
+                // ✅ Check if user is registered
+                let signedUpUsers = JSON.parse(localStorage.getItem("signedUpUsers")) || [];
+                const matchedUser = signedUpUsers.find(u => u.email === user.email);
+
+                    if (!matchedUser) {
+                        alert("🚫 This Google account is not registered. Please sign up first.");
+                        return; // Block access
+                    }
+                            const userRole = matchedUser.role;
+                    alert(`Welcome back ${user.name} (${userRole.toUpperCase()})`);
+
+                            if (userRole === "owner") {
+                        window.location.href = "../Owner/index.html";
+                    } else {
+                        sessionStorage.setItem('showLoginSuccess', '1');
+                        window.location.href = "../Home/index.html";
+                    }
+                })
+                .catch(err => {
+                alert("Google Sign-In failed.");
+                console.error(err);
+                });
+            }
+        });
+
+        // 🔘 Attach to Google Button
+        document.getElementById('googleSigninBtn').addEventListener('click', () => {
+            tokenClient.requestAccessToken();
+        });
+        });
+
+        // 🔄 Background Scroll Parallax
+        window.addEventListener('scroll', function () {
+        const hero = document.querySelector('.hero');
+        if (!hero) return;
+        const scrolled = window.pageYOffset;
+        hero.style.backgroundPosition = 'center ' + (scrolled * 0.4) + 'px';
+        });
+
+        // ✨ Animate hero on load
+        window.addEventListener('DOMContentLoaded', function () {
+        const heroLeft = document.querySelector('.hero-left');
+        if (heroLeft) {
+            setTimeout(() => heroLeft.classList.add('animated'), 200);
+        }
+
+        const icons = document.querySelectorAll('.social-icons a');
+        let iconsAnimated = false;
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+            if (entry.isIntersecting && !iconsAnimated) {
+                icons.forEach((icon, i) => {
+                setTimeout(() => icon.classList.add('animated'), i * 200);
+                });
+                iconsAnimated = true;
+            }
+            });
+        }, { threshold: 0.3 });
+
+        if (icons.length) {
+            observer.observe(icons[0].parentElement);
+        }
+        });
+    </script>
+</body>
+
+</html>

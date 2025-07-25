@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HireMyRoom - Apartments</title>
+    <link rel="stylesheet" href="apartment.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <span>Phone no: <a href="tel:+923228441665">+923228441665</a> or email us:
+        <a href="mailto:info@hiremyroom.com">info@hiremyroom.com</a></span>
+    </div>
+    <!-- Header/Nav -->
+    <header>
+        <div class="container nav-container">
+        <div class="logo">
+            <span>Hire my <span class="blue">Room</span></span>
+        </div>
+        <button class="menu-toggle" aria-label="Open menu">&#9776; MENU</button>
+        <nav id="main-nav">
+            <ul>
+            <li><a href="../Home/index.html">Home</a></li>
+            <li><a href="../Rooms/rooms.html">Rooms</a></li>
+            <li><a href="../Apartments/apartment.html" class="active">Apartments</a></li>
+            <li><a href="../Blog/blog.html">Blog</a></li>
+            <li><a href="../About/about.html">About</a></li>
+            <li><a href="../Login/login.html">Login</a></li>
+            <li><a href="../SignUp/SignUp.html">Sign Up</a></li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-content">
+            <h1 class="hero-title">APARTMENTS</h1>
+            <div class="search-card">
+                <h2>Search for Room</h2>
+                <form class="search-form" onsubmit="event.preventDefault(); filterListings();">
+                    <select id="searchType">
+                        <option value="all">all</option>
+                        <option value="Room">Room</option>
+                        <option value="Apartment">Apartment</option>
+                    </select>
+                    <select id="searchCity">
+                        <option value="all">all</option>
+                        <option value="New York City">New York City</option>
+                        <option value="Los Angeles">Los Angeles</option>
+                        <option value="Chicago">Chicago</option>
+                        <option value="Houston">Houston</option>
+                        <option value="Phoenix">Phoenix</option>
+                        <option value="Philadelphia">Philadelphia</option>
+                        <option value="San Antonio">San Antonio</option>
+                        <option value="San Diego">San Diego</option>
+                        <option value="Dallas">Dallas</option>
+                        <option value="San Jose">San Jose</option>
+                        <option value="Austin">Austin</option>
+                        <option value="Jacksonville">Jacksonville</option>
+                        <option value="Fort Worth">Fort Worth</option>
+                        <option value="Columbus">Columbus</option>
+                        <option value="Charlotte">Charlotte</option>
+                        <option value="San Francisco">San Francisco</option>
+                        <option value="Indianapolis">Indianapolis</option>
+                        <option value="Seattle">Seattle</option>
+                        <option value="Denver">Denver</option>
+                        <option value="Washington, D.C.">Washington, D.C.</option>
+                        <option value="Nashville">Nashville</option>
+                        <option value="Oklahoma City">Oklahoma City</option>
+                        <option value="Boston">Boston</option>
+                        <option value="El Paso">El Paso</option>
+                        <option value="Portland">Portland</option>
+                        <option value="Las Vegas">Las Vegas</option>
+                        <option value="Memphis">Memphis</option>
+                        <option value="Detroit">Detroit</option>
+                        <option value="Louisville">Louisville</option>
+                        <option value="Baltimore">Baltimore</option>
+                        <option value="Milwaukee">Milwaukee</option>
+                        <option value="Albuquerque">Albuquerque</option>
+                        <option value="Tucson">Tucson</option>
+                        <option value="Fresno">Fresno</option>
+                        <option value="Mesa">Mesa</option>
+                        <option value="Sacramento">Sacramento</option>
+                        <option value="Atlanta">Atlanta</option>
+                        <option value="Kansas City">Kansas City</option>
+                        <option value="Colorado Springs">Colorado Springs</option>
+                        <option value="Omaha">Omaha</option>
+                        <option value="Raleigh">Raleigh</option>
+                        <option value="Miami">Miami</option>
+                        <option value="Long Beach">Long Beach</option>
+                        <option value="Virginia Beach">Virginia Beach</option>
+                        <option value="Oakland">Oakland</option>
+                        <option value="Minneapolis">Minneapolis</option>
+                        <option value="Tulsa">Tulsa</option>
+                        <option value="Tampa">Tampa</option>
+                        <option value="Arlington">Arlington</option>
+                        <option value="New Orlean">New Orlean</option>
+                    </select>
+                    <input type="text" id="searchArea" placeholder="Area" value="all">
+                    <button type="submit">SEARCH ROOM</button>
+                </form>
+                <div class="search-bar-2">
+                    <input type="text" placeholder="Search by destination, cities and price">
+                    <button type="button"><span>&#128269;</span></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <main>
+        <div class="container listings" id="listings">
+            
+        </div>
+        <div class="container pagination" id="pagination">
+            
+        </div>
+    </main>
+    <footer>
+        <div class="footer-main">
+            <div class="container footer-container">
+                <div class="footer-col">
+                    <h3>Hire My Room</h3>
+                    <p class="tagline">Where Renting Feels Right.</p>
+                    <a href="../Home/index.html" class="footer-link">Read more &rarr;</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="">Review</a></li>
+                        <li><a href="../Blog/blog.html">Blog</a></li>
+                        <li><a href="../About/about.html">About</a></li>
+                        <li><a href="../Rooms/rooms.html">Rooms</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Types</h3>
+                    <div class="types">
+                        <span class="type-btn">Apartment</span>
+                        <span class="type-btn">Room</span>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Subscribe</h3>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Enter email address">
+                        <button type="submit" class="subscribe-btn" aria-label="Send">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M2 21l21-9-21-9v7l15 2-15 2z" />
+                            </svg>
+                        </button>
+                    </form>
+                    <div class="footer-social">
+                        <span>Follow us</span>
+                        <div class="social-icons">
+                            <a href="https://twitter.com/" class="icon-x" aria-label="X">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M17.53 6.47a.75.75 0 0 0-1.06 0L12 10.94 7.53 6.47a.75.75 0 1 0-1.06 1.06L10.94 12l-4.47 4.47a.75.75 0 1 0 1.06 1.06L12 13.06l4.47 4.47a.75.75 0 0 0 1.06-1.06L13.06 12l4.47-4.47a.75.75 0 0 0 0-1.06z" />
+                                </svg>
+                            </a>
+                            <a href="https://facebook.com/" class="icon-fb" aria-label="Facebook">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0" />
+                                </svg>
+                            </a>
+                            <a href="https://instagram.com/" class="icon-ig" aria-label="Instagram">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.241 1.308 3.608.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.241 1.246-3.608 1.308-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.241-1.308-3.608C2.175 15.747 2.163 15.367 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608C4.515 2.497 5.782 2.225 7.148 2.163 8.414 2.105 8.794 2.163 12 2.163zm0-2.163C8.741 0 8.332.012 7.052.07 5.771.128 4.659.334 3.678 1.315c-.98.98-1.187 2.092-1.245 3.373C2.012 5.668 2 6.077 2 12c0 5.923.012 6.332.07 7.612.058 1.281.265 2.393 1.245 3.373.98.98 2.092 1.187 3.373 1.245C8.332 23.988 8.741 24 12 24s3.668-.012 4.948-.07c1.281-.058 2.393-.265 3.373-1.245.98-.98 1.187-2.092 1.245-3.373.058-1.28.07-1.689.07-7.612 0-5.923-.012-6.332-.07-7.612-.058-1.281-.265-2.393-1.245-3.373-.98-.98-2.092-1.187-3.373-1.245C15.668.012 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container footer-bottom-container">
+                <p>Copyright © 2025 All rights reserved | <span class="footer-heart">&#10084;</span> hiremyroom.com</p>
+                <div class="footer-links">
+                    <a href="">Terms</a>
+                    <a href="">Privacy</a>
+                    <a href="">Compliances</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+
+const apartments = [
+    {
+        id: 1,
+        title: "Gulberg inn hotel",
+        city: "Lahore",
+        area: "Gulberg",
+        price: "PKR 18000 daily",
+        rooms: 1,
+        image: "../Images/small_17409106632.jpg"
+    },
+    {
+        id: 2,
+        title: "Gulberg real estate apartment",
+        city: "Lahore",
+        area: "Gulberg",
+        price: "PKR 25000 daily",
+        rooms: 1,
+        image: "../Images/small_17409106621.jpg"
+    },
+    {
+        id: 3,
+        title: "Aaprtment 2 rooms",
+        city: "Lahore",
+        area: "Johar Town",
+        price: "PKR 15000 Monthly",
+        rooms: 2,
+        image: "../Images/small_17409100493.jpg"
+    },
+    {
+        id: 4,
+        title: "The Heights Nathiagali",
+        city: "Abbottabad",
+        area: "Nathia Gali",
+        price: "PKR 16000 Daily",
+        rooms: 2,   
+        image: "../Images/small_17409100492.jpg"
+    },
+    {
+        id: 5,
+        title: "1 bed Flat available",
+        city: "Lahore",
+        area: "Raiwand",
+        price: "PKR 21000 Monthly",
+        rooms: 4,
+        image: "../Images/small_17409100491.jpg"
+    },
+    {
+        id: 6,
+        title: "Your Private Get Away! One Bed...",
+        city: "Lahore",
+        area: "Bahria town",
+        price: "PKR 9000 Daily",
+        rooms: 1,
+        image: "../Images/small_17403286024.jpg"
+    },
+    {
+        id: 7,
+        title: "VIP One Bed Apartment",
+        city: "Lahore",
+        area: "Bahria town",
+        price: "PKR 9000 Daily",
+        rooms: 1,
+        image: "../Images/small_17403286023.jpg"
+    },
+    {
+        id: 8,
+        title: "One bed apartment available",
+        city: "Lahore",
+        area: "Bahria Nasheman",
+        price: "PKR 18000 Monthly",
+        rooms: 2,
+        image: "../Images/small_17403286022.jpg"
+    },
+    {
+        id: 9,
+        title: "Luxury Room at Bahria",
+        city: "Lahore",
+        area: "Bahria town",
+        price: "PKR 9000 Daily",
+        rooms: 1,
+        image: "../Images/small_17403286021.jpg"
+    },
+    {
+        id: 10,
+        title: "Cozy 1-Bedroom Apartment",
+        city: "Lahore",
+        area: "Bahria town",
+        price: "PKR 9000 Daily",
+        rooms: 1,
+        image: "../Images/small_17402608765.jpg"
+    }
+];
+
+const listingsPerPage = 4;
+let currentPage = 1;
+let filteredApartments = apartments;
+
+function renderListings() {
+    const listingsDiv = document.getElementById('listings');
+    listingsDiv.innerHTML = '';
+    const start = (currentPage - 1) * listingsPerPage;
+    const end = start + listingsPerPage;
+    const pageListings = filteredApartments.slice(start, end);
+    if (pageListings.length === 0) {
+        listingsDiv.innerHTML = '<p>No apartments found.</p>';
+        return;
+    }
+    pageListings.forEach(apartment => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+            <img src="${apartment.image}" alt="${apartment.title}">
+            <div class="card-body">
+                <div class="card-title">${apartment.title}</div>
+                <div class="card-location">${apartment.city}, ${apartment.area}</div>
+                <div class="card-details">
+                    <span>${apartment.rooms} Room${apartment.rooms > 1 ? 's' : ''}</span>
+                </div>
+                <div class="card-price">${apartment.price}</div>
+                <div class="card-action">
+                    <button>View Details</button>
+                </div>
+            </div>
+        `;
+        listingsDiv.appendChild(card);
+    });
+}
+
+function renderPagination() {
+    const paginationDiv = document.getElementById('pagination');
+    paginationDiv.innerHTML = '';
+    const totalPages = Math.ceil(filteredApartments.length / listingsPerPage);
+    if (totalPages <= 1) return;
+    for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement('button');
+        btn.textContent = i;
+        btn.className = i === currentPage ? 'active' : '';
+        btn.onclick = () => {
+            currentPage = i;
+            renderListings();
+            renderPagination();
+        };
+        paginationDiv.appendChild(btn);
+    }
+}
+
+function filterListings() {
+    const type = document.getElementById('searchType').value.toLowerCase();
+    const city = document.getElementById('searchCity').value.toLowerCase();
+    const area = document.getElementById('searchArea').value.toLowerCase();
+    filteredApartments = apartments.filter(a => {
+        return (
+            (type === '' || a.title.toLowerCase().includes(type)) &&
+            (city === '' || a.city.toLowerCase().includes(city)) &&
+            (area === '' || a.area.toLowerCase().includes(area))
+        );
+    });
+    currentPage = 1;
+    renderListings();
+    renderPagination();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    renderListings();
+    renderPagination();
+    const socialIcons = document.querySelectorAll('.social-icons a');
+    socialIcons.forEach(icon => {
+        icon.classList.add('animated');
+    });
+});
+    </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll('.social-icons a').forEach(function(el, i) {
+    setTimeout(function() {
+      el.classList.add('animated');
+    }, 100 * i);
+  });
+});
+</script>
+<script>
+    window.addEventListener('scroll', function () {
+        const hero = document.querySelector('.hero');
+        if (!hero) return;
+        const scrolled = window.pageYOffset;
+        hero.style.backgroundPosition = 'center ' + (scrolled * 0.4) + 'px';
+    });
+
+    // Animate hero-left on page load
+    window.addEventListener('DOMContentLoaded', function () {
+        var heroLeft = document.querySelector('.hero-left');
+        if (heroLeft) {
+            setTimeout(function () {
+                heroLeft.classList.add('animated');
+            }, 200);
+        }
+
+        // Animate social icons when in view
+        var icons = document.querySelectorAll('.social-icons a');
+        var iconsAnimated = false;
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting && !iconsAnimated) {
+                    icons.forEach(function (icon, i) {
+                        setTimeout(function () {
+                            icon.classList.add('animated');
+                        }, i * 200);
+                    });
+                    iconsAnimated = true;
+                }
+            });
+        }, { threshold: 0.3 });
+
+        if (icons.length) {
+            observer.observe(icons[0].parentElement);
+        }
+    });
+</script>
+<script src="apartment.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const listings = document.getElementById('listings');
+  if (listings) {
+    listings.addEventListener('click', function(e) {
+      if (e.target && e.target.closest('.card-action button')) {
+        e.preventDefault();
+        const btn = e.target.closest('.card-action button');
+        const card = btn.closest('.card');
+        if (!card) return;
+        const roomData = {
+          title: card.querySelector('.card-title')?.textContent || '',
+          price: card.querySelector('.card-price')?.textContent || '',
+          period: '', // Add if available
+          location: card.querySelector('.card-location')?.textContent || '',
+          img: card.querySelector('img')?.getAttribute('src') || '',
+          features: '', // Add if available
+          description: '', // Add if available
+          owner: '' // Add if available
+        };
+        localStorage.setItem('selectedRoom', JSON.stringify(roomData));
+        window.location.href = '../Home/roomDetail.html';
+      }
+    });
+  }
+});
+</script>
+</body>
+</html> 

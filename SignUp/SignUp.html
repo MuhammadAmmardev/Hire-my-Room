@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hire my Room</title>
+    <link rel="stylesheet" href="SignUp.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <span>Phone no: <a href="tel:+923228441665">+923228441665</a> or email us:
+            <a href="mailto:info@hiremyroom.com">info@hiremyroom.com</a></span>
+    </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="hero-left">
+                <p class="welcome">Welcome to Hire My Room</p>
+                <h1>Rent an appartment for your vacation</h1>
+                <div class="hero-buttons">
+                    <a href="../Home/index.html" class="btn btn-primary">HOME</a>
+                    <a href="../About/about.html" class="btn btn-outline">ABOUT US</a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <h2>
+                    <span class="bold">Sign Up</span>
+                    <span id="signup-role-label">Guest</span>
+                </h2>
+                <div class="signup-toggle">
+                    <button type="button" id="guestBtn" class="toggle-btn active">
+                        GUEST
+                    </button>
+                    <button type="button" id="ownerBtn" class="toggle-btn">
+                        OWNER
+                    </button>
+                </div>
+                <form id="signupForm">
+                    <div class="form-group">
+                        <input type="text" id="fullName" placeholder="Full Name" required />
+                    </div>
+                    <div class="form-row">
+                        <input type="email" id="email" placeholder="Email" required />
+                        <input type="text" id="phone" placeholder="phone" required />
+                    </div>
+                    <div class="form-row" id="password-row">
+                        <input type="password" id="password" placeholder="Password" required />
+                        <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+                    </div>
+                    <div class="form-group owner-only" style="display: none">
+                        <select id="ownershipType">
+                            <option value="">Select Ownership Type</option>
+                            <option value="hotel owner">Hotel Owner</option>
+                            <option value="hostel owner">Hostel Owner</option>
+                            <option value="apartment owner">Apartment Owner</option>
+                        </select>
+                    </div>
+                    <div class="form-group owner-only" style="display: none">
+                        <textarea id="propertyAddress" placeholder="Property address"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="cnic" placeholder="CNIC (optional)" />
+                    </div>
+                    <div class="form-row checkbox-row">
+                        <input type="checkbox" id="terms" />
+                        <label for="terms">I accept the
+                            <a href="#" class="terms-link">terms and conditions</a></label>
+                    </div>
+                    <button type="submit" id="signupBtn" class="btn btn-primary">
+                        SIGN UP
+                    </button>
+                    <div class="google-signup-container">
+                        <button type="button" id="googleSignupBtn" class="btn btn-google">
+                            <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google logo" style="width:20px; vertical-align:middle; margin-right:8px;"> Sign up with Google
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script src="SignUp.js"></script>
+</body>
+
+</html>

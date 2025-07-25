@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hire My Room</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      display: flex;
+      min-height: 100vh;
+      background: #f5f5f5;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #007bff;
+      color: white;
+      padding-top: 15px;
+      flex-shrink: 0;
+    }
+
+    .sidebar .logo {
+      font-size: 20px;
+      font-weight: lighter;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: Arial, Helvetica, sans-serif;
+      margin-bottom: 10px;
+    }
+
+    .sidebar .user {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px;
+    }
+
+    .sidebar .user img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .sidebar .user span {
+      font-size: 14px;
+    }
+
+    .sidebar .nav {
+      padding: 10px 20px;
+    }
+
+    .sidebar .nav div {
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .topbar {
+      background: #006ee4;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .topbar .left a {
+      color: white;
+      margin-right: 20px;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .topbar .right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 14px;
+      margin-right: 50px;
+
+    }
+
+    .topbar .icon {
+      position: relative;
+      font-size: 20px;
+    }
+
+    .sup1 {
+      position: absolute;
+      top: -8px;
+      right: -10px;
+      background: rgb(250, 58, 58);
+      color: white;
+      border-radius: 20%;
+      font-size: 10px;
+      padding: 2px 4px;
+
+    }
+
+    .sup {
+      position: absolute;
+      top: -8px;
+      right: -10px;
+      background: orange;
+      color: white;
+      border-radius: 20%;
+      font-size: 10px;
+      padding: 2px 4px;
+    }
+
+    .breadcrumb {
+      background: #f4f4f4;
+      padding: 12px 25px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .breadcrumb>h1 {
+      text-align: left;
+      font-weight: lighter;
+      font-family: 'Times New Roman', Times, serif;
+      color: rgb(68, 68, 68);
+    }
+
+    .hero {
+      position: relative;
+      background: url(download.jfif);
+      height: 550px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 20px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+    }
+
+    .hero h1 {
+      font-size: 38px;
+      font-weight: bold;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .hero h1 span {
+      color: #026ec7;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .hero p {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .hero p span {
+      color: #026ec7;
+    }
+
+    .hero .btns {
+      margin-top: 20px;
+    }
+
+    .hero .btns button {
+      padding: 10px 20px;
+      border: none;
+      margin-right: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn-blue {
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: lighter;
+      letter-spacing: 2px;
+
+    }
+
+    .btn-blue:hover {
+      background-color: transparent;
+      outline: 1px solid #007bff;
+      border-radius: 5px;
+    }
+
+    .btn-white {
+      background-color: white;
+      color: rgb(65, 65, 65);
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: lighter;
+      letter-spacing: 2px;
+    }
+
+    .btn-white:hover {
+      background-color: transparent;
+      outline: 1px solid white;
+      border-radius: 5px;
+    }
+
+    .hide-sidebar .sidebar {
+      display: none;
+    }
+
+    .hide-sidebar .topbar,
+    .hide-sidebar .breadcrumb,
+    .hide-sidebar .hero {
+      margin-left: 0;
+    }
+
+    .sidebar+div {
+      flex: 1;
+      transition: all 0.3s ease;
+    }
+
+
+    .user-menu {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      color: white;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      right: 0;
+      background: white;
+      color: black;
+      min-width: 150px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+      font-size: 16px;
+    }
+
+    .dropdown div {
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .dropdown div:hover {
+      background: #f1f1f1;
+    }
+
+    .user-menu:hover .dropdown {
+      display: block;
+    }
+
+    .sidebar .nav div i {
+      width: 20px;
+    }
+
+    .sidebar hr {
+      border: none;
+      border-top: 1px solid grey;
+      margin: 10px 0;
+    }
+
+    .nav div:hover {
+      background: #339dff;
+      border-radius: 3px;
+    }
+
+    .footer {
+      height: 50px;
+      background-color: white;
+      font-size: 15px;
+      color: #555;
+      border-top: 1px solid #ddd;
+      padding: 17px 15px;
+    }
+
+    .footer a {
+      color: #0050a7;
+      text-decoration: none;
+      margin: 0 5px;
+      font-weight: bolder;
+    }
+
+    label {
+      font-weight: bold;
+      font-size: 14px;
+      color: #555;
+    }
+
+    input {
+      border-radius: 5px;
+      border: 1px solid grey;
+
+    }
+
+    .btn-submit {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 5px;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    .btn-submit:hover {
+      background-color: #0056b3;
+      box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+    }
+
+    .top-alert {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      z-index: 9999;
+      padding: 16px 0;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #fff;
+      background: #28a745;
+      /* green by default */
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      transition: opacity 0.4s;
+    }
+
+    .top-alert.error {
+      background: #e53935;
+      /* red for errors */
+    }
+
+    .has-submenu {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .submenu {
+      background: #339dff;
+      margin-left: 25px;
+      border-radius: 5px;
+      margin-top: 5px;
+      padding: 5px 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .submenu div {
+      padding: 8px 20px;
+      color: #fff;
+      font-size: 15px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .submenu div:hover {
+      background: #007bff;
+      border-radius: 3px;
+    }
+
+    .nav {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .sidebar-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px;
+      border-radius: 12px;
+      background: none;
+      color: #fff;
+      font-size: 17px;
+      cursor: pointer;
+      margin-bottom: 2px;
+      transition: background 0.2s;
+      position: relative;
+      min-width: 0;
+    }
+
+    .sidebar-item.active,
+    .sidebar-item:hover {
+      background: #1976d2;
+    }
+
+    .sidebar-item .arrow {
+      margin-left: 8px;
+      font-size: 15px;
+      transition: transform 0.2s;
+      display: inline-block;
+    }
+
+    .sidebar-label {
+      flex: 1;
+      margin-left: 8px;
+      text-align: left;
+    }
+
+    .has-submenu {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .submenu-list {
+      display: none;
+      flex-direction: column;
+      background: none;
+      margin: 0 0 0 0;
+      padding: 0;
+      box-shadow: none;
+      position: static;
+      margin-left: 32px;
+      margin-top: 0;
+      gap: 0;
+    }
+
+    .has-submenu.open+.submenu-list {
+      display: flex;
+    }
+
+    .has-submenu.open>.arrow,
+    .has-submenu.open #manageRoomsArrow {
+      transform: rotate(90deg);
+      content: '\25BC';
+      /* ▼ */
+    }
+
+    #manageRoomsArrow.open {
+      content: '\25BC';
+      /* ▼ */
+    }
+
+    .submenu-item {
+      padding: 10px 0 10px 8px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-radius: 8px;
+      background: none;
+      transition: background 0.2s;
+      margin: 0;
+    }
+
+    .submenu-item:hover {
+      background: #1976d2;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="top-alert" class="top-alert" style="display:none;"></div>
+  <div class="sidebar">
+    <div class="logo">
+      <i class="fa-solid fa-house"></i> Hire My Room
+    </div>
+    <hr style="border-top: 1px solid  grey">
+    <div class="user">
+      <img src="https://i.pravatar.cc/100?img=12" alt="User" />
+
+      <span>Ammar Khan</span>
+    </div>
+    <hr>
+    <div class="nav">
+      <div class="sidebar-item" id="dashboardMenu">
+        <i class="fa-solid fa-gauge"></i> <span class="sidebar-label">Dashboard</span> <span
+          class="arrow">&#x25B6;</span>
+      </div>
+      <div class="sidebar-item has-submenu" id="manageRoomsMenu">
+        <i class="fa-solid fa-bed"></i> <span class="sidebar-label">Manage Rooms</span> <span class="arrow"
+          id="manageRoomsArrow">&#x25B6;</span>
+      </div>
+      <div class="submenu-list" id="manageRoomsSubmenu" style="display:none;">
+        <div class="submenu-item"><i class="fa-regular fa-circle"></i> Post your room</div>
+        <div class="submenu-item"><i class="fa-regular fa-circle"></i> View your rooms</div>
+      </div>
+      <div class="sidebar-item" id="bookingsMenu">
+        <i class="fa-solid fa-book"></i> <span class="sidebar-label">Bookings</span> <span class="arrow">&#x25B6;</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="flex:1">
+    <div class="topbar">
+
+      <div class="left">
+        <span id="toggleSidebar" style="cursor:pointer; font-size: 16px;">☰</span>
+        <a href="../Home/index.html" style="margin-left: 20px;">Home</a>
+        <a href="">Contact</a>
+      </div>
+
+      <div class="right">
+        <div class="icon">
+          <i class="fa-regular fa-comment-dots"></i><sup class="sup1">0</sup>
+        </div>
+        <div class="icon">
+          <i class="fa-regular fa-bell"></i></i><sup class="sup">0</sup>
+        </div>
+
+        <div class="user-menu">
+          <div>Ammar Khan <span style="font-size: 10px;">▼</span></div>
+          <div class="dropdown">
+            <div id="viewProfile">Your profile</div>
+            <hr>
+
+            
+            <div><a href="../Login/login.html">Logout</a></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="breadcrumb">
+      <h1>
+        HOME
+      </h1>
+      <div style="text-align: right;margin: 5px 2px; font-size: 14px; color: grey; ">
+        OWNER / HOME
+      </div>
+    </div>
+
+    <div class="hero">
+
+      <p>Welcome to <span>Hire my room</span></p>
+      <h1>Renting Made Easy with <br><span>HireMyRoom</span></h1>
+
+      <div class="btns">
+     <button class="btn-blue" onclick="window.location.href='../Home/index.html'">LEARN MORE</button>
+        <button class="btn-white" onclick="window.location.href='../About/about.html'">CONTACT US</button>
+      </div>
+    </div>
+
+    <div id="profileSection" style="display: none; padding: 30px;">
+      <h2
+        style="font-family: 'Times New Roman', Times, serif; font-weight: lighter; color: rgb(39, 39, 39); margin-bottom: 30px;">
+        User Profile</h2>
+      <label>Name</label><br>
+      <input type="text" value="Ammar Khan" style="width: 100%; padding: 15px;"><br><br>
+
+      <label>Email</label><br>
+      <input type="email" value="ammarkhan100001@gmail.com" style="width: 100%; padding: 15px;"><br><br>
+
+      <label>Password (Leave blank if you do not want to change)</label><br>
+      <input type="password" style="width: 100%; padding: 15px;"><br><br>
+
+      <label>Confirm Password</label><br>
+      <input type="password" style="width: 100%; padding: 15px;"><br><br>
+
+      <label>Address</label><br>
+      <input type="text" value="Lahore " style="width: 100%; padding: 15px;"><br><br>
+
+      <label>Phone</label><br>
+      <input type="text" value="03404232890 " style="width: 100%; padding: 15px;"><br><br>
+
+
+      <label>CNIC</label><br>
+      <input type="text" style="width: 100%; padding: 15px;"><br><br>
+
+      <button class="btn-submit">SAVE CHANGES</button>
+
+    </div>
+
+        <div id="postRoomForm" style="display:none; margin: 40px 0; width: 100%;">
+      <div style="max-width: 1200px; margin: 0 auto; display: flex; gap: 32px; align-items: flex-start;">
+                <div style="width: 32px;"></div>
+        
+        <div
+          style="flex: 2; background: #fff; border-radius: 18px; box-shadow: 0 4px 24px rgba(0,0,0,0.10); padding: 48px 40px 32px 40px;">
+          <div
+            style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #222; margin-bottom: 0; letter-spacing: 2px; font-weight: 600;">
+            ROOM</div>
+          <h2
+            style="font-family: 'Playfair Display', serif; font-weight: bold; color: #222; margin-bottom: 8px; font-size: 2rem; margin-top: 0;">
+            Post your property for rent</h2>
+          <p style="margin-bottom: 18px; color: #666; font-size: 1.1rem;">Your property ad will be published on site<br>
+            <span style="color:red; font-size: 14px;">(*) Shows the required field</span>
+          </p>
+          <form>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px 24px; margin-bottom: 0;">
+              <div style="display: flex; flex-direction: column;">
+                <label style="font-weight: bold; font-size: 1rem; margin-bottom: 6px;">TITLE <span
+                    style="color:red;">*</span></label>
+                <input type="text" placeholder="Title" required
+                  style="width:100%;padding:14px 16px; border-radius:10px; border:1px solid #ccc; font-size:1rem;">
+              </div>
+              <div style="display: flex; flex-direction: column;">
+                <label style="font-weight: bold; font-size: 1rem; margin-bottom: 6px;">TYPE <span
+                    style="color:red;">*</span></label>
+                <select required
+                  style="width:100%;padding:14px 16px; border-radius:10px; border:1px solid #ccc; font-size:1rem;">
+                  <option>Room</option>
+                  <option>Apartment</option>
+                </select>
+              </div>
+              <div style="display: flex; flex-direction: column;">
+                <label style="font-weight: bold; font-size: 1rem; margin-bottom: 6px;">OWNER</label>
+                <input type="text" value="Ammar Khan" readonly
+                  style="width:100%;padding:14px 16px; border-radius:10px; border:1px solid #ccc; font-size:1rem; background: #f7f7f7;">
+              </div>
+              <div style="display: flex; flex-direction: column;">
+                <label style="font-weight: bold; font-size: 1rem; margin-bottom: 6px;">MAX PERSONS <span
+                    style="color:red;">*</span></label>
+                <input type="number" placeholder="Persons" required
+                  style="width:100%;padding:14px 16px; border-radius:10px; border:1px solid #ccc; font-size:1rem;">
+              </div>
+              <div style="display: flex; flex-direction: column;">
+                <label style="font-weight: bold; font-size: 1rem; margin-bottom: 6px;">BATHROOM <span
+                    style="color:red;">*</span></label>
+                <input type="number" placeholder="Bathrooms" required
+                  style="width:100%;padding:14px 16px; border-radius:10px; border:1px solid #ccc; font-size:1rem;">
+              </div>
+              <div style="display: flex; flex-direction: column;">
+                <label style="font-weight: bold; font-size: 1rem; margin-bottom: 6px;">RENT DURATION <span
+                    style="color:red;">*</span></label>
+                <select required
+                  style="width:100%;padding:14px 16px; border-radius:10px; border:1px solid #ccc; font-size:1rem;">
+                  <option>Hourly</option>
+                  <option>Daily</option>
+                  <option>Monthly</option>
+                </select>
+              </div>
+              <div style="display: flex; flex-direction: column;">
+                <label style="font-weight: bold; font-size: 1rem; margin-bottom: 6px;">PRICE <span
+                    style="color:red;">*</span></label>
+                <input type="number" placeholder="Enter price" required
+                  style="width:100%;padding:14px 16px; border-radius:10px; border:1px solid #ccc; font-size:1rem;">
+              </div>
+              <div style="display: flex; flex-direction: column;">
+                <label style="font-weight: bold; font-size: 1rem; margin-bottom: 6px;">ROOM CATEGORY <span
+                    style="color:red;">*</span></label>
+                <select required
+                  style="width:100%;padding:14px 16px; border-radius:10px; border:1px solid #ccc; font-size:1rem;">
+                  <option>Normal</option>
+                  <option>Luxury</option>
+                  <option>Family</option>
+                </select>
+              </div>
+              <div style="display: flex; flex-direction: column;">
+                <label style="font-weight: bold; font-size: 1rem; margin-bottom: 6px;">ROOM RANKING <span
+                    style="color:red;">*</span></label>
+                <select required
+                  style="width:100%;padding:14px 16px; border-radius:10px; border:1px solid #ccc; font-size:1rem;">
+                  <option>Normal - (10)</option>
+                  <option>Popular - (20)</option>
+                  <option>Super Hot - (30)</option>
+                </select>
+              </div>
+              <div style="display: flex; flex-direction: column;">
+                <label style="font-weight: bold; font-size: 1rem; margin-bottom: 6px;">NUMBER OF ROOMS <span
+                    style="color:red;">*</span> <span style="font-size:12px; color:grey;">(Number of rooms with similar
+                    category)</span></label>
+                <input type="number" placeholder="Number of Rooms" required
+                  style="width:100%;padding:14px 16px; border-radius:10px; border:1px solid #ccc; font-size:1rem;">
+              </div>
+              <div style="grid-column: 1 / span 2; display: flex; flex-direction: column;">
+                <label style="font-weight: bold; font-size: 1rem; margin-bottom: 6px;">SERVICES <span
+                    style="color:red;">*</span></label>
+                <input type="text" placeholder="Services" required
+                  style="width:100%;padding:14px 16px; border-radius:10px; border:1px solid #ccc; font-size:1rem;">
+              </div>
+              <div style="display: flex; flex-direction: column;">
+                <label style="font-weight: bold; font-size: 1rem; margin-bottom: 6px;">CITY <span
+                    style="color:red;">*</span></label>
+                <input type="text" placeholder="City" required
+                  style="width:100%;padding:14px 16px; border-radius:10px; border:1px solid #ccc; font-size:1rem;">
+              </div>
+              <div style="display: flex; flex-direction: column;">
+                <label style="font-weight: bold; font-size: 1rem; margin-bottom: 6px;">AREA <span
+                    style="color:red;">*</span></label>
+                <input type="text" placeholder="Select an Area" required
+                  style="width:100%;padding:14px 16px; border-radius:10px; border:1px solid #ccc; font-size:1rem;">
+              </div>
+              <div style="grid-column: 1 / span 2; display: flex; flex-direction: column;">
+                <label style="font-weight: bold; font-size: 1rem; margin-bottom: 6px;">Location <span
+                    style="color:red;">*</span></label>
+                <input type="text" placeholder="Location" required
+                  style="width:100%;padding:14px 16px; border-radius:10px; border:1px solid #ccc; font-size:1rem;">
+              </div>
+              <div style="grid-column: 1 / span 2; display: flex; flex-direction: column;">
+                <label style="font-weight: bold; font-size: 1rem; margin-bottom: 6px;">Description <span
+                    style="color:red;">*</span></label>
+                <textarea placeholder="Description" required
+                  style="width:100%;padding:14px 16px; border-radius:10px; border:1px solid #ccc; font-size:1rem; min-height: 80px;"></textarea>
+              </div>
+              <div style="grid-column: 1 / span 2; display: flex; flex-direction: column;">
+                <label style="font-weight: bold; font-size: 1rem; margin-bottom: 6px;">Photos (Maximum 3mb and 5 images)
+                  <span style="color:red;">*</span></label>
+                <input type="file" accept="image/*" multiple required
+                  style="width:100%;padding:14px 16px; border-radius:10px; border:1px solid #ccc; font-size:1rem;">
+              </div>
+              <div style="grid-column: 1 / span 2; display: flex; flex-direction: column;">
+                <label style="font-weight: bold; font-size: 1rem; margin-bottom: 6px;">Room Video</label>
+                <input type="file" accept="video/*"
+                  style="width:100%;padding:14px 16px; border-radius:10px; border:1px solid #ccc; font-size:1rem;">
+              </div>
+            </div>
+            <div style="margin-top: 32px; text-align: right;">
+              <button type="submit" class="btn-submit"
+                style="font-size: 16px; padding: 14px 36px; border-radius: 8px;">ADD ROOM</button>
+            </div>
+          </form>
+        </div>
+        <!-- Right Blue Info/Ad Panel, full height to footer -->
+        <div
+          style="flex: 1; background: #007bff; border-radius: 18px; padding: 32px 24px 24px 24px; color: #fff; display: flex; flex-direction: column; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); min-width: 320px; max-width: 350px; min-height: calc(100vh - 120px); height: 100%; position: sticky; top: 0;">
+          <div style="width: 100%; text-align: center; margin-bottom: 24px;">
+            <div
+              style="display: flex; align-items: center; justify-content: center; font-size: 1.1rem; margin-bottom: 8px;">
+              <i class='fa fa-phone' style='margin-right: 8px;'></i>
+              <span>Phone: 03001234567</span>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">
+              <i class='fa fa-envelope' style='margin-right: 8px;'></i>
+              <span>Email: ammarkhan100001@gmail.com</span>
+            </div>
+          </div>
+          <!-- Ad Image Slider -->
+          <div
+            style="width: 100%; background: #10232e; border-radius: 16px; overflow: hidden; display: flex; align-items: center; justify-content: center; margin-top: 10px;">
+            <img id="adSliderImg" src="../Images/image_1.jpeg" alt="Ad"
+              style="width: 220px; height: 180px; object-fit: cover; border-radius: 16px; transition: opacity 0.5s; background: #10232e; filter: brightness(0.85); margin: 0 auto; display: block;">
+          </div>
+          <div style="flex: 1;"></div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="footer">
+      <div>
+        <span style="font-weight: bolder;">copywrite &copy; 2024-2029 </span> <a
+          href="https://www.hiremyroom.com/owner/home"> hiremyroom.com</a>All rights reserved.
+      </div>
+    </div>
+
+  </div>
+
+
+  <script>
+
+    document.getElementById("toggleSidebar").addEventListener("click", function () {
+      document.body.classList.toggle("hide-sidebar");
+    });
+
+
+    const menu = document.querySelector(".user-menu");
+    const dropdown = menu.querySelector(".dropdown");
+
+    menu.addEventListener("click", () => {
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    });
+    menu.addEventListener("mouseleave", () => {
+      setTimeout(() => dropdown.style.display = "none", 200);
+    });
+
+    document.getElementById("viewProfile").addEventListener("click", function () {
+      document.querySelector(".hero").style.display = "none";
+      document.querySelector(".breadcrumb").style.display = "none";
+      document.getElementById("profileSection").style.display = "block";
+    });
+
+    function showTopAlert(message, type = "success", duration = 3000) {
+      const alert = document.getElementById('top-alert');
+      alert.textContent = message;
+      alert.className = 'top-alert' + (type === 'error' ? ' error' : '');
+      alert.style.display = 'block';
+      alert.style.opacity = '1';
+      setTimeout(() => {
+        alert.style.opacity = '0';
+        setTimeout(() => {
+          alert.style.display = 'none';
+        }, 400);
+      }, duration);
+    }
+    // Example usage: showTopAlert('Sign In Successfully.!', 'success', 3000);
+  </script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      var alertBar = document.getElementById('top-alert');
+      if (alertBar) {
+        alertBar.textContent = 'Sign In Successfully.!';
+        alertBar.classList.remove('error');
+        alertBar.style.display = 'block';
+        setTimeout(function () {
+          alertBar.style.display = 'none';
+        }, 3000);
+      }
+    });
+
+    // Toggle Manage Rooms submenu
+    const manageRoomsMenu = document.getElementById('manageRoomsMenu');
+    const manageRoomsSubmenu = document.getElementById('manageRoomsSubmenu');
+    const manageRoomsArrow = document.getElementById('manageRoomsArrow');
+    manageRoomsMenu.addEventListener('click', function (e) {
+      e.stopPropagation();
+      manageRoomsMenu.classList.toggle('open');
+      if (manageRoomsMenu.classList.contains('open')) {
+        manageRoomsSubmenu.style.display = 'flex';
+        manageRoomsMenu.classList.add('active');
+        manageRoomsArrow.innerHTML = '&#x25BC;'; // ▼
+      } else {
+        manageRoomsSubmenu.style.display = 'none';
+        manageRoomsMenu.classList.remove('active');
+        manageRoomsArrow.innerHTML = '&#x25B6;'; // ▶
+      }
+    });
+    // Optional: close submenu when clicking outside
+    document.addEventListener('click', function (e) {
+      if (!manageRoomsMenu.contains(e.target)) {
+        manageRoomsMenu.classList.remove('open', 'active');
+        manageRoomsSubmenu.style.display = 'none';
+        manageRoomsArrow.innerHTML = '&#x25B6;'; // ▶
+      }
+    });
+
+    // Add event listener for 'Post your room' submenu item
+    const postRoomBtn = document.querySelectorAll('#manageRoomsSubmenu .submenu-item')[0]; // First submenu item
+    postRoomBtn.addEventListener('click', function () {
+      document.querySelector('.hero').style.display = 'none';
+      document.querySelector('.breadcrumb').style.display = 'none';
+      document.getElementById('profileSection').style.display = 'none';
+      document.getElementById('postRoomForm').style.display = 'block';
+    });
+  </script>
+  <script>
+    // Ad image slider logic for blue panel below form
+    (function () {
+      const adImages = [
+        '../Images/image_1.jpeg',
+        '../Images/image_2.jpg',
+        '../Images/image_3.jpg'
+      ];
+      let adIndex = 0;
+      const adImg = document.getElementById('adSliderImg');
+      if (adImg) {
+        setInterval(() => {
+          adIndex = (adIndex + 1) % adImages.length;
+          adImg.style.opacity = 0;
+          setTimeout(() => {
+            adImg.src = adImages[adIndex];
+            adImg.style.opacity = 1;
+          }, 400);
+        }, 2000);
+      }
+    })();
+  </script>
+</body>
+
+</html>

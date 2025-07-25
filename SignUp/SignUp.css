@@ -1,0 +1,529 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #fff;
+    color: #222;
+    overflow-x: hidden;
+}
+
+.top-bar {
+    background: #0066e6;
+    color: #fff;
+    padding: 0;
+    height: 28px;
+    display: flex;
+    align-items: center;
+}
+.top-bar span {
+    width: 84%;
+    max-width: 1200px;
+    margin: 0 62px;
+    color: #9dd6e4;
+    font-size: 15px;
+    display: block;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 500;
+}
+.top-bar a {
+    font-size: 12px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s, font-size 0.2s;
+}
+.top-bar a:hover {
+    color: #ffda33;
+    font-size: 1.14em;
+}
+
+header {
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.01);
+    min-height: 50px;
+    padding: 0 62px;
+}
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.nav-container {
+    min-height: 50px;
+    padding: 22px 0 18px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    font-size: 24px;
+    font-weight:800;
+    line-height: 1;
+}
+.logo .blue {
+    color: #0066e6;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 36px;
+    margin: 0;
+    padding: 0;
+}
+nav a {
+    position: relative;
+    padding: 2rem 0;
+    color: #444;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+nav a::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 60%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #0066e6;
+    transform: translateX(-60%);
+    transition: 0.4s ease-out;
+}
+nav a.active,
+nav a:hover {
+    color: #0066e6;
+}
+nav a.active::after,
+nav a:hover::after {
+    width: 100%;
+}
+
+.hero {
+    position: relative;
+    min-height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat !important;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-content {
+    
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 480px;
+    max-width: 1200px;
+    padding-bottom: 64px;
+}
+.hero-left {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    color: #fff;
+    max-width: 1200px;
+    width: 45%;
+    padding-top:10px 0px 40px 0px;
+    transform: translateY(40px);
+    transition: opacity 0.7s cubic-bezier(.4,1.7,.6,.95), transform 0.7s cubic-bezier(.4,1.7,.6,.95);
+}
+.hero-left.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+.hero-left .welcome {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.hero-left h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0 0 24px 0;
+    line-height: 1.2;
+}
+.hero-buttons {
+    display: flex;
+    gap: 6px;
+}
+.btn {
+    display: inline-block;
+    padding: 12px 18px;
+    border-radius: 3px;
+    font-size: 11PX;
+    letter-spacing: 3px;
+    font-weight: 400;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+    text-decoration: none;
+}
+.btn-primary {
+    background: #0066e6;
+    color: #fff;
+    border: 1.5px solid #0066e6;
+}
+.btn:hover{
+    background: transparent;
+    border: 1px solid #0066e6;
+    color: #0066e6;
+}
+.btn-outline {
+    background: #fff;
+    color: #222;
+    border: 1.5px solid #ddd;
+}
+.btn-outline:hover {
+    background: transparent;
+    color: #fff;
+    border: 1.5px solid #fff;
+}
+
+.hero-right {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+    padding: 20px 35px 20px 35px;
+    margin-top: 50px;
+    margin-right: 40px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.hero-right h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 28px;
+    color: #222;
+    letter-spacing: 0.5px;
+    text-align: left;
+}
+.hero-right .signup-toggle {
+    display: flex;
+    gap: 34px;
+    margin-bottom: 20px;
+}
+.hero-right .toggle-btn {
+    flex: 1;
+    padding: 18px 60px;
+    border-radius: 4px;
+    border: 1px solid #0066e6;
+    background: #fff;
+    color: #0066e6;
+    font-size: 0.75rem;
+    font-weight: 200;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    outline: none;
+}
+.hero-right .toggle-btn.active {
+    background: #0066e6;
+    color: #fff;
+    border: 1px solid #0066e6;
+}
+.hero-right .toggle-btn:not(.active):hover {
+    background: #0066e6;
+    color: #fff;
+}
+.hero-right .toggle-btn.active:hover {
+    background: transparent;
+    border-color: #0066e6;
+    color: #0066e6;
+}
+.hero-right .form-group {
+    margin-bottom: 22px;
+    width: 100%;
+}
+.hero-right .form-row {
+    display: flex;
+    gap: 22px;
+    margin-bottom: 22px;
+    width: 100%;
+}
+.hero-right .form-row .form-row-stacked {
+    flex-direction: column;
+}
+.hero-right input[type="text"],
+.hero-right input[type="email"],
+.hero-right input[type="password"],
+.hero-right select,
+.hero-right textarea {
+    width: 100%;
+    padding: 20px 10px;
+    border: none;
+    border-radius: 4px;
+    background: #f3f3f3;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 500;
+    margin-bottom: 0;
+    outline: none;
+    box-sizing: border-box;
+    color: #222;
+}
+.hero-right input::placeholder,
+.hero-right textarea::placeholder {
+    color: #000000;
+    font-weight: 500;
+    font-size: 0.80rem;
+}
+.hero-right select {
+    color: #222;
+    font-size: 1.0rem;
+    font-weight: 500;
+}
+.hero-right textarea {
+    min-height: 48px;
+    resize: vertical;
+}
+.hero-right .checkbox-row {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 11px;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+.hero-right input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #0066e6;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+.hero-right .checkbox-row label {
+    display: inline;
+    font-size: 1.0rem;
+    color: #888;
+    font-weight: 500;
+    flex: 1;
+    margin: 0;
+}
+.hero-right .terms-link {
+    color: #0066e6;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.hero-right #signupBtn {
+    width: 100%;
+    font-size: 0.75rem;
+    padding: 20px 0;
+    border-radius: 4px;
+    margin-top: 8px;
+    margin-bottom: 35px;
+    background: #0066e6;
+    color: #fff;
+    border: none;
+    letter-spacing: 4px;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+#signupBtn:hover{
+    background: transparent;
+    border: 1px solid #0066e6;
+    color: #0066e6;
+    border-radius: 4px;
+}
+.google-signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.btn-google {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 300px;
+    padding: 12px 0;
+    background: #fff;
+    color: #444;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: background 0.2s, box-shadow 0.2s;
+    margin: 0 auto;
+    gap: 8px;
+}
+.btn-google:hover {
+    border: 1px solid #0066e6;
+    color: #0066e6;
+    background: #f7f7f7;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+@media (max-width: 1200px){
+    .hero-left{
+        padding-left: 20px;
+        /* padding-right: 25px; */
+    }
+}
+
+@media (max-width: 990px) {
+    .hero {
+        background: none !important;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .hero-left {
+        background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+            url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        min-height: 600px;
+        padding: 30px 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-left h1 {
+        line-height: 1.3;
+        margin-bottom: 40px;
+        font-size: 32px;
+    }
+
+    .hero-left .welcome {
+        font-size: 18px;
+        margin-bottom: 24px;
+    }
+
+    .hero-buttons .btn{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+        width: auto;
+        align-items: center;
+    }
+
+    .btn, .btn-google {
+        padding: 12px 18px;
+        font-size: 0.9rem;
+        width: auto;
+        min-width: 120px;
+    }
+
+    .hero-right {
+        width: 100%;
+        margin: 20px;
+        padding: 24px 20px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        background: #fff;
+        box-sizing: border-box;
+    }
+
+    .hero-right .form-row {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero-right input,
+    .hero-right textarea,
+    .hero-right select {
+        width: 100%;
+        font-size: 1rem;
+        padding: 14px 10px;
+    }
+
+    #signupBtn {
+        width: 100%;
+        padding: 14px;
+        font-size: 1rem;
+        margin-top: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero{
+        background: none !important;
+    }
+    .hero-content {
+        flex-direction: column;
+    }
+
+    .hero-left {
+        background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+            url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        min-height: 700px;
+        padding: 30px 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .hero-left h1{
+        line-height: 1.3;
+        margin-bottom: 40px;
+    }
+    .hero-left .welcome{
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    .hero-right {
+        width: calc(100% - 24px);
+        margin: 20px 15px; /* ✅ Add space around form */
+        padding: 24px 20px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* ✅ Clean subtle elevation */
+        border-radius: 10px;
+        background: #fff;
+        box-sizing: border-box;
+    }
+
+    .hero-right .form-row {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero-right input,
+    .hero-right textarea,
+    .hero-right select {
+        width: 100%;
+        font-size: 1rem;
+        padding: 14px 10px;
+    }
+
+    .hero-buttons .btn{
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .btn, .btn-google, #signupBtn {
+        width: 100%;
+        padding: 14px;
+        font-size: 1rem;
+    }
+}

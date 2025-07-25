@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Hire my Room</title>
+</head>
+
+<body>
+  <div id="top-alert" class="top-alert" style="display:none;position:fixed;top:0;left:0;width:100vw;z-index:9999;padding:16px 0;text-align:center;font-size:1.1rem;font-weight:600;color:#fff;background:#28a745;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:opacity 0.4s;"></div>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <span>Phone no: <a href="tel:+923228441665">+923228441665</a> or email us:
+      <a href="mailto:info@hiremyroom.com">info@hiremyroom.com</a></span>
+  </div>
+  <!-- Header/Nav -->
+  <header>
+    <div class="container nav-container">
+      <div class="logo">
+        <span>Hire my <span class="blue">Room</span></span>
+      </div>
+      <button class="menu-toggle" aria-label="Open menu">&#9776; MENU</button>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="" class="active">Home</a></li>
+          <li><a href="../Rooms/rooms.html">Rooms</a></li>
+          <li><a href="../Apartments/apartment.html">Apartments</a></li>
+          <li><a href="../Blog/blog.html">Blog</a></li>
+          <li><a href="../About/about.html">About</a></li>
+          <li><a href="../Login/login.html">Login</a></li>
+          <li><a href="../SignUp/SignUp.html">Sign up</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="room-category-bar">
+    <a href="../Rooms/rooms.html?category=normal" class="room-category normal">
+      <span class="icon">
+        <svg width="38" height="38" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M3 10.5L12 4l9 6.5V20a1 1 0 0 1-1 1h-4.5a.5.5 0 0 1-.5-.5V15a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v5.5a.5.5 0 0 1-.5.5H4a1 1 0 0 1-1-1V10.5z"
+            fill="currentColor" />
+        </svg>
+      </span>
+      <span class="label">NORMAL ROOMS</span>
+    </a>
+    <a href="../Rooms/rooms.html?category=luxury" class="room-category luxury">
+      <span class="icon">
+        <svg width="38" height="38" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2l2.9 6.9L22 9.2l-5 5.1 1.2 7.1L12 17.3l-6.2 4.1L7 14.3 2 9.2l7.1-0.3L12 2z"
+            fill="currentColor" />
+        </svg>
+      </span>
+      <span class="label">LUXURY ROOMS</span>
+    </a>
+    <a href="../Rooms/rooms.html?category=vip" class="room-category vip">
+      <span class="icon">
+        <svg width="38" height="38" viewBox="0 0 24 24" fill="none">
+          <path d="M2 7l5.5 7 4.5-6 4.5 6L22 7v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7z" fill="currentColor" />
+        </svg>
+      </span>
+      <span class="label">VIP ROOMS</span>
+    </a>
+    <a href="../Rooms/rooms.html?category=vvip" class="room-category vvip">
+      <span class="icon">
+        <svg width="38" height="38" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2l7 7-7 13-7-13 7-7zm0 2.8L6.4 9h11.2L12 4.8z" fill="currentColor" />
+        </svg>
+      </span>
+      <span class="label">VVIP ROOMS</span>
+    </a>
+    <a href="../Rooms/rooms.html?category=married_couple" class="room-category married">
+      <span class="icon">
+        <svg width="38" height="38" viewBox="0 0 24 24" fill="none">
+          <path d="M12 21s-6.7-5.6-9.3-8.2A5.5 5.5 0 0 1 12 5.7a5.5 5.5 0 0 1 9.3 7.1C18.7 15.4 12 21 12 21z"
+            fill="currentColor" />
+        </svg>
+      </span>
+      <span class="label">MARRIED COUPLE<br />ROOMS</span>
+    </a>
+  </div>
+
+  <section class="hero-bg">
+    <div class="hero-card">
+      <h1>Search for Room</h1>
+      <form class="hero-form">
+        <div class="hero-form-row">
+          <div class="hero-form-group">
+            <label>Type</label>
+            <select>
+              <option>all</option>
+              <option>Room</option>
+              <option>Apartment</option>
+            </select>
+          </div>
+          <div class="hero-form-group">
+            <label>City</label>
+            <select>
+              <option>all</option>
+              <option>New York City</option>
+              <option>Los Angeles</option>
+              <option>Chicago</option>
+              <option>Houston</option>
+              <option>Phoenix</option>
+              <option>Philadelphia</option>
+              <option>San Antonio</option>
+              <option>San Diego</option>
+              <option>Dallas</option>
+              <option>San Jose</option>
+              <option>Austin</option>
+              <option>Jacksonville</option>
+              <option>Fort Worth</option>
+              <option>Columbus</option>
+              <option>Charlotte</option>
+              <option>San Francisco</option>
+              <option>Indianapolis</option>
+              <option>Seattle</option>
+              <option>Denver</option>
+              <option>Washington, D.C.</option>
+              <option>Nashville</option>
+              <option>Oklahoma City</option>
+              <option>Boston</option>
+              <option>El Paso</option>
+              <option>Portland</option>
+              <option>Las Vegas</option>
+              <option>Memphis</option>
+              <option>Detroit</option>
+              <option>Louisville</option>
+              <option>Baltimore</option>
+              <option>Milwaukee</option>
+              <option>Albuquerque</option>
+              <option>Tucson</option>
+              <option>Fresno</option>
+              <option>Mesa</option>
+              <option>Sacramento</option>
+              <option>Atlanta</option>
+              <option>Kansas City</option>
+              <option>Colorado Springs</option>
+              <option>Omaha</option>
+              <option>Raleigh</option>
+              <option>Miami</option>
+              <option>Long Beach</option>
+              <option>Virginia Beach</option>
+              <option>Oakland</option>
+              <option>Minneapolis</option>
+              <option>Tulsa</option>
+              <option>Tampa</option>
+              <option>Arlington</option>
+              <option>New Orlean</option>
+            </select>
+          </div>
+          <div class="hero-form-group">
+            <label>Area</label>
+            <input type="text" placeholder="all" />
+          </div>
+          <div class="hero-form-group">
+            <label>Price</label>
+            <select>
+              <option>High to low</option>
+              <option>Low to high</option>
+            </select>
+          </div>
+          <button type="submit" class="hero-search-btn">SEARCH</button>
+        </div>
+        <div class="hero-form-row hero-form-row-search">
+          <div class="hero-searchbar">
+            <input type="text" placeholder="Search by destination, cities and price" />
+            <button type="submit" class="hero-search-icon">
+              <svg width="25" height="25" viewBox="0 0 24 24" fill="none">
+                <circle cx="11" cy="11" r="7" stroke="white" stroke-width="2" />
+                <line x1="16.018" y1="16.4853" x2="20" y2="20.4673" stroke="white" stroke-width="2"
+                  stroke-linecap="round" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+  <!-- Super Hot Room Section -->
+  <section class="hot-rooms-section">
+    <div class="hot-room-container">
+      <div class="hot-rooms-header">
+        <h2>Super Hot Rooms</h2>
+        <a href="https://hiremyroom.com/rooms/superhot" class="hot-rooms-viewmore">View more &gt;</a>
+      </div>
+      <div class="hot-rooms-grid">
+        <!-- Card 1 -->
+        <div class="hot-room-card" data-type="room" data-city="karachi" data-title="Hotel Bilal" data-price="7000" data-period="Per Day" data-location="Liaqatabad, Karachi" data-img="../Images/hotel_bilal(1).jpg" data-features="Luxury rooms with free electricity, separate cupboards for each member, attached bathrooms and free wifi" data-description="Cozy 2-seater room available! Perfect for two, with a comfortable setup and a great location. Ideal for students or professionals. Contact for details!" data-owner="Sign up to view more details ...">
+          <div class="hot-room-img-wrap">
+            <img src="../Images/hotel_bilal(1).jpg" alt="Hotel Bilal" />
+            <span class="hot-badge">Super Hot</span>
+          </div>
+          <div class="hot-room-info">
+            <div class="hot-room-title">Hotel Bilal</div>
+            <div class="hot-room-price">
+              PKR 7000 <span class="hot-room-period">(Per Day)</span>
+            </div>
+            <div class="hot-room-location">Liaqatabad, Karachi</div>
+            <a href="#" class="hot-room-btn book-now-btn">Book now &rarr;</a>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="hot-room-card" data-type="room" data-city="karachi" data-title="Hotel Bilal" data-price="2700" data-period="Per Day" data-location="Liaqatabad, Karachi" data-img="../Images/hotel_bilal.jpg" data-features="Luxury rooms with free electricity, separate cupboards for each member, attached bathrooms and free wifi" data-description="Cozy 2-seater room available! Perfect for two, with a comfortable setup and a great location. Ideal for students or professionals. Contact for details!" data-owner="Sign up to view more details ...">
+          <div class="hot-room-img-wrap">
+            <img src="../Images/hotel_bilal.jpg" alt="Hotel Bilal" />
+            <span class="hot-badge">Super Hot</span>
+          </div>
+          <div class="hot-room-info">
+            <div class="hot-room-title">Hotel Bilal</div>
+            <div class="hot-room-price">
+              PKR 2700 <span class="hot-room-period">(Per Day)</span>
+            </div>
+            <div class="hot-room-location">Liaqatabad, Karachi</div>
+            <a href="#" class="hot-room-btn book-now-btn">Book now &rarr;</a>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="hot-room-card" data-type="room" data-city="abbottabad" data-title="The Heights Nathiagali" data-price="10000" data-period="Per Day" data-location="Nathia Gali, Abbottabad" data-img="../Images/Nathiagali-1.jpg" data-features="Luxury rooms with free electricity, separate cupboards for each member, attached bathrooms and free wifi" data-description="Cozy 2-seater room available! Perfect for two, with a comfortable setup and a great location. Ideal for students or professionals. Contact for details!" data-owner="Sign up to view more details ...">
+          <div class="hot-room-img-wrap">
+            <img src="../Images/Nathiagali-1.jpg" alt="The Heights Nathiagali" />
+            <span class="hot-badge">Super Hot</span>
+          </div>
+          <div class="hot-room-info">
+            <div class="hot-room-title">The Heights Nathiagali</div>
+            <div class="hot-room-price">
+              PKR 10000 <span class="hot-room-period">(Per Day)</span>
+            </div>
+            <div class="hot-room-location">Nathia Gali, Abbottabad</div>
+            <a href="#" class="hot-room-btn book-now-btn">Book now &rarr;</a>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="hot-room-card" data-type="room" data-city="abbottabad" data-title="The Heights Nathiagali" data-price="8000" data-period="Per Day" data-location="Nathia Gali, Abbottabad" data-img="../Images/Nathiagali-2.jpg" data-features="Luxury rooms with free electricity, separate cupboards for each member, attached bathrooms and free wifi" data-description="Cozy 2-seater room available! Perfect for two, with a comfortable setup and a great location. Ideal for students or professionals. Contact for details!" data-owner="Sign up to view more details ...">
+          <div class="hot-room-img-wrap">
+            <img src="../Images/Nathiagali-2.jpg" alt="The Heights Nathiagali" />
+            <span class="hot-badge">Super Hot</span>
+          </div>
+          <div class="hot-room-info">
+            <div class="hot-room-title">The Heights Nathiagali</div>
+            <div class="hot-room-price">
+              PKR 8000 <span class="hot-room-period">(Per Day)</span>
+            </div>
+            <div class="hot-room-location">Nathia Gali, Abbottabad</div>
+            <a href="#" class="hot-room-btn book-now-btn">Book now &rarr;</a>
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="hot-room-card" data-type="room" data-city="abbottabad" data-title="The Heights Nathiagali" data-price="16000" data-period="Per Day" data-location="Nathia Gali, Abbottabad" data-img="../Images/Nathiagali-3.jpg" data-features="Luxury rooms with free electricity, separate cupboards for each member, attached bathrooms and free wifi" data-description="Cozy 2-seater room available! Perfect for two, with a comfortable setup and a great location. Ideal for students or professionals. Contact for details!" data-owner="Sign up to view more details ...">
+          <div class="hot-room-img-wrap">
+            <img src="../Images/Nathiagali-3.jpg" alt="The Heights Nathiagali" />
+            <span class="hot-badge">Super Hot</span>
+          </div>
+          <div class="hot-room-info">
+            <div class="hot-room-title">The Heights Nathiagali</div>
+            <div class="hot-room-price">
+              PKR 16000 <span class="hot-room-period">(Per Day)</span>
+            </div>
+            <div class="hot-room-location">Nathia Gali, Abbottabad</div>
+            <a href="#" class="hot-room-btn book-now-btn">Book now &rarr;</a>
+          </div>
+        </div>
+        <!-- Card 6 -->
+        <div class="hot-room-card" data-type="room" data-city="lahore" data-title="3 seater luxury rooms availabl..." data-price="13000" data-period="Per Month" data-location="Johar Town, Lahore" data-img="../Images/3-seat-luxury.jpg" data-features="Luxury rooms with free electricity, separate cupboards for each member, attached bathrooms and free wifi" data-description="Cozy 2-seater room available! Perfect for two, with a comfortable setup and a great location. Ideal for students or professionals. Contact for details!" data-owner="Sign up to view more details ...">
+          <div class="hot-room-img-wrap">
+            <img src="../Images/3-seat-luxury.jpg" alt="3 seater luxury rooms available" />
+            <span class="hot-badge">Super Hot</span>
+          </div>
+          <div class="hot-room-info">
+            <div class="hot-room-title">
+              3 seater luxury rooms availabl...
+            </div>
+            <div class="hot-room-price">
+              PKR 13000 <span class="hot-room-period">(Per Month)</span>
+            </div>
+            <div class="hot-room-location">Johar Town, Lahore</div>
+            <a href="#" class="hot-room-btn book-now-btn">Book now &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Hot Room Section  -->
+  <section class="hot-rooms-section">
+    <div class="hot-room-container">
+      <div class="hot-rooms-header">
+        <h2>Hot Rooms</h2>
+        <a href="https://hiremyroom.com/rooms/hot" class="hot-rooms-viewmore">View more &gt;</a>
+      </div>
+      <div class="hot-rooms-grid">
+        <!-- Card 1 -->
+        <div class="hot-room-card" data-type="apartment" data-city="lahore" data-title="Apartment 2 rooms" data-price="15000" data-period="Per Month" data-location="Johar Town, Lahore" data-img="../Images/apartment-2-room.jpg" data-features="Luxury rooms with free electricity, separate cupboards for each member, attached bathrooms and free wifi" data-description="Cozy 2-seater room available! Perfect for two, with a comfortable setup and a great location. Ideal for students or professionals. Contact for details!" data-owner="Sign up to view more details ...">
+          <div class="hot-room-img-wrap">
+            <img src="../Images/apartment-2-room.jpg" alt="Apartment 2 rooms" />
+            <span class="hot-badge hot">Hot</span>
+          </div>
+          <div class="hot-room-info">
+            <div class="hot-room-title">Apartment 2 rooms</div>
+            <div class="hot-room-price">
+              PKR 15000 <span class="hot-room-period">(Per Month)</span>
+            </div>
+            <div class="hot-room-location">Johar Town, Lahore</div>
+            <a href="#" class="hot-room-btn book-now-btn">Book now &rarr;</a>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="hot-room-card" data-type="room" data-city="lahore" data-title="Family Room" data-price="6500" data-period="Per Day" data-location="Johar Town, Lahore" data-img="../Images/family-room.jpg" data-features="Luxury rooms with free electricity, separate cupboards for each member, attached bathrooms and free wifi" data-description="Cozy 2-seater room available! Perfect for two, with a comfortable setup and a great location. Ideal for students or professionals. Contact for details!" data-owner="Sign up to view more details ...">
+          <div class="hot-room-img-wrap">
+            <img src="../Images/family-room.jpg" alt="Family Room" />
+            <span class="hot-badge hot">Hot</span>
+          </div>
+          <div class="hot-room-info">
+            <div class="hot-room-title">Family Room</div>
+            <div class="hot-room-price">
+              PKR 6500 <span class="hot-room-period">(Per Day)</span>
+            </div>
+            <div class="hot-room-location">Johar Town, Lahore</div>
+            <a href="#" class="hot-room-btn book-now-btn">Book now &rarr;</a>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="hot-room-card" data-type="room" data-city="lahore" data-title="02 Seater Room with Attached B..." data-price="14000" data-period="Per Month" data-location="Johar Town, Lahore" data-img="../Images/2-seater-room.jpg" data-features="Luxury rooms with free electricity, separate cupboards for each member, attached bathrooms and free wifi" data-description="Cozy 2-seater room available! Perfect for two, with a comfortable setup and a great location. Ideal for students or professionals. Contact for details!" data-owner="Sign up to view more details ...">
+          <div class="hot-room-img-wrap">
+            <img src="../Images/2-seater-room.jpg" alt="02 Seater Room with Attached Bath" />
+            <span class="hot-badge hot">Hot</span>
+          </div>
+          <div class="hot-room-info">
+            <div class="hot-room-title">
+              02 Seater Room with Attached B...
+            </div>
+            <div class="hot-room-price">
+              PKR 14000 <span class="hot-room-period">(Per Month)</span>
+            </div>
+            <div class="hot-room-location">Johar Town, Lahore</div>
+            <a href="#" class="hot-room-btn book-now-btn">Book now &rarr;</a>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="hot-room-card" data-type="room" data-city="lahore" data-title="The Luxury Girls Hostel" data-price="7000" data-period="Per Day" data-location="Gulberg, Lahore" data-img="../Images/luxury-hostel.jpg" data-features="Luxury rooms with free electricity, separate cupboards for each member, attached bathrooms and free wifi" data-description="Cozy 2-seater room available! Perfect for two, with a comfortable setup and a great location. Ideal for students or professionals. Contact for details!" data-owner="Sign up to view more details ...">
+          <div class="hot-room-img-wrap">
+            <img src="../Images/luxury-hostel.jpg" alt="The Luxury Girls Hostel" />
+            <span class="hot-badge hot">Hot</span>
+          </div>
+          <div class="hot-room-info">
+            <div class="hot-room-title">The Luxury Girls Hostel</div>
+            <div class="hot-room-price">
+              PKR 7000 <span class="hot-room-period">(Per Day)</span>
+            </div>
+            <div class="hot-room-location">Gulberg, Lahore</div>
+            <a href="#" class="hot-room-btn book-now-btn">Book now &rarr;</a>
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="hot-room-card" data-type="room" data-city="lahore" data-title="subhan boys hostel 3 seater ro..." data-price="12000" data-period="Per Month" data-location="Thokar niaz baig, Lahore" data-img="../Images/subhan-boys-hostel.jpg" data-features="Luxury rooms with free electricity, separate cupboards for each member, attached bathrooms and free wifi" data-description="Cozy 2-seater room available! Perfect for two, with a comfortable setup and a great location. Ideal for students or professionals. Contact for details!" data-owner="Sign up to view more details ...">
+          <div class="hot-room-img-wrap">
+            <img src="../Images/subhan-boys-hostel.jpg" alt="subhan boys hostel 3 seater room" />
+            <span class="hot-badge hot">Hot</span>
+          </div>
+          <div class="hot-room-info">
+            <div class="hot-room-title">
+              subhan boys hostel 3 seater ro...
+            </div>
+            <div class="hot-room-price">
+              PKR 12000 <span class="hot-room-period">(Per Month)</span>
+            </div>
+            <div class="hot-room-location">Thokar niaz baig, Lahore</div>
+            <a href="#" class="hot-room-btn book-now-btn">Book now &rarr;</a>
+          </div>
+        </div>
+        <!-- Card 6 -->
+        <div class="hot-room-card" data-type="room" data-city="lahore" data-title="Imperial Boys Hostel, 3rd Fl..." data-price="12000" data-period="Per Month" data-location="Johar Town, Lahore" data-img="../Images/imperial-boys-hostel.jpg" data-features="Luxury rooms with free electricity, separate cupboards for each member, attached bathrooms and free wifi" data-description="Cozy 2-seater room available! Perfect for two, with a comfortable setup and a great location. Ideal for students or professionals. Contact for details!" data-owner="Sign up to view more details ...">
+          <div class="hot-room-img-wrap">
+            <img src="../Images/imperial-boys-hostel.jpg" alt="Imperial Boys Hostel, 3rd Floor" />
+            <span class="hot-badge hot">Hot</span>
+          </div>
+          <div class="hot-room-info">
+            <div class="hot-room-title">Imperial Boys Hostel, 3rd Fl...</div>
+            <div class="hot-room-price">
+              PKR 12000 <span class="hot-room-period">(Per Month)</span>
+            </div>
+            <div class="hot-room-location">Johar Town, Lahore</div>
+            <a href="#" class="hot-room-btn book-now-btn">Book now &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="new-rooms-section">
+    <div class="new-rooms-container">
+      <div class="new-rooms-header">
+        <h2>Newly Added Rooms</h2>
+        <div class="new-rooms-header-right">
+          <a href="https://hiremyroom.com/rooms/latest" class="new-rooms-viewmore">View more &gt;</a>
+        </div>
+      </div>
+      <div class="new-rooms-grid">
+        <!-- Card 1 -->
+        <div class="new-room-card" data-type="room" data-city="lahore" data-title="aisha girls hostel" data-price="6000" data-period="Per Month" data-location="Johar Town, Lahore" data-img="../Images/aisha-hostel-1.jpg" data-features="Luxury rooms with free electricity, separate cupboards for each member, attached bathrooms and free wifi" data-description="Cozy 2-seater room available! Perfect for two, with a comfortable setup and a great location. Ideal for students or professionals. Contact for details!" data-owner="Sign up to view more details ...">
+          <img src="../Images/aisha-hostel-1.jpg" alt="aisha girls hostel" />
+          <div class="new-room-info">
+            <div class="new-room-title">aisha girls hostel</div>
+            <div class="new-room-price">
+              PKR 6000 <span class="new-room-period">(Per Month)</span>
+            </div>
+            <div class="new-room-location">Johar Town, Lahore</div>
+            <a href="#" class="new-room-btn book-now-btn">Book now <span>&#8594;</span></a>
+          </div>
+        </div>
+        <div class="new-room-card" data-type="room" data-city="lahore" data-title="aisha girls hostel" data-price="6000" data-period="Per Month" data-location="Johar Town, Lahore" data-img="../Images/aisha-hostel-2.jpg" data-features="Luxury rooms with free electricity, separate cupboards for each member, attached bathrooms and free wifi" data-description="Cozy 2-seater room available! Perfect for two, with a comfortable setup and a great location. Ideal for students or professionals. Contact for details!" data-owner="Sign up to view more details ...">
+          <img src="../Images/aisha-hostel-2.jpg" alt="aisha girls hostel" />
+          <div class="new-room-info">
+            <div class="new-room-title">aisha girls hostel</div>
+            <div class="new-room-price">
+              PKR 6000 <span class="new-room-period">(Per Month)</span>
+            </div>
+            <div class="new-room-location">Johar Town, Lahore</div>
+            <a href="#" class="new-room-btn book-now-btn">Book now <span>&#8594;</span></a>
+          </div>
+        </div>
+        <div class="new-room-card" data-type="room" data-city="lahore" data-title="aisha girls hostel" data-price="8000" data-period="Per Month" data-location="Johar Town, Lahore" data-img="../Images/aisha-hostel-3.jpg" data-features="Luxury rooms with free electricity, separate cupboards for each member, attached bathrooms and free wifi" data-description="Cozy 2-seater room available! Perfect for two, with a comfortable setup and a great location. Ideal for students or professionals. Contact for details!" data-owner="Sign up to view more details ...">
+          <img src="../Images/aisha-hostel-3.jpg" alt="aisha girls hostel" />
+          <div class="new-room-info">
+            <div class="new-room-title">aisha girls hostel</div>
+            <div class="new-room-price">
+              PKR 8000 <span class="new-room-period">(Per Month)</span>
+            </div>
+            <div class="new-room-location">Johar Town, Lahore</div>
+            <a href="#" class="new-room-btn book-now-btn">Book now <span>&#8594;</span></a>
+          </div>
+        </div>
+        <div class="new-room-card" data-type="room" data-city="lahore" data-title="aisha girls hostel" data-price="15000" data-period="Per Month" data-location="Johar Town, Lahore" data-img="../Images/aisha-hostel-4.jpg" data-features="Luxury rooms with free electricity, separate cupboards for each member, attached bathrooms and free wifi" data-description="Cozy 2-seater room available! Perfect for two, with a comfortable setup and a great location. Ideal for students or professionals. Contact for details!" data-owner="Sign up to view more details ...">
+          <img src="../Images/aisha-hostel-4.jpg" alt="aisha girls hostel" />
+          <div class="new-room-info">
+            <div class="new-room-title">aisha girls hostel</div>
+            <div class="new-room-price">
+              PKR 15000 <span class="new-room-period">(Per Month)</span>
+            </div>
+            <div class="new-room-location">Johar Town, Lahore</div>
+            <a href="#" class="new-room-btn book-now-btn">Book now <span>&#8594;</span></a>
+          </div>
+        </div>
+        <div class="new-room-card" data-type="room" data-city="lahore" data-title="aisha girls hostel" data-price="10000" data-period="Per Month" data-location="Johar Town, Lahore" data-img="../Images/aisha-hostel-5.jpg" data-features="Luxury rooms with free electricity, separate cupboards for each member, attached bathrooms and free wifi" data-description="Cozy 2-seater room available! Perfect for two, with a comfortable setup and a great location. Ideal for students or professionals. Contact for details!" data-owner="Sign up to view more details ...">
+          <img src="../Images/aisha-hostel-5.jpg" alt="aisha girls hostel" />
+          <div class="new-room-info">
+            <div class="new-room-title">aisha girls hostel</div>
+            <div class="new-room-price">
+              PKR 10000 <span class="new-room-period">(Per Month)</span>
+            </div>
+            <div class="new-room-location">Johar Town, Lahore</div>
+            <a href="#" class="new-room-btn book-now-btn">Book now <span>&#8594;</span></a>
+          </div>
+        </div>
+        <div class="new-room-card" data-type="room" data-city="lahore" data-title="aisha girls hostel" data-price="10000" data-period="Per Month" data-location="Johar Town, Lahore" data-img="../Images/a.jpg" data-features="Luxury rooms with free electricity, separate cupboards for each member, attached bathrooms and free wifi" data-description="Cozy 2-seater room available! Perfect for two, with a comfortable setup and a great location. Ideal for students or professionals. Contact for details!" data-owner="Sign up to view more details ...">
+          <img src="../Images/a.jpg" alt="aisha girls hostel" />
+          <div class="new-room-info">
+            <div class="new-room-title">aisha girls hostel</div>
+            <div class="new-room-price">
+              PKR 10000 <span class="new-room-period">(Per Month)</span>
+            </div>
+            <div class="new-room-location">Johar Town, Lahore</div>
+            <a href="#" class="new-room-btn book-now-btn">Book now <span>&#8594;</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="property-section">
+    <div class="property-container">
+      <div class="property-header">
+        <h2>Apartments / Villas / Farm houses</h2>
+        <a href="../Apartments/apartment.html" class="property-viewmore">View more &gt;</a>
+      </div>
+      <div class="property-grid">
+        <!-- Card 1 -->
+        <div class="property-card" data-type="apartment" data-city="lahore" data-title="Gulberg inn hotel" data-price="18000" data-period="Per Day" data-location="Gulberg, Lahore" data-img="../Images/apartment-1.jpg" data-features="Luxury rooms with free electricity, separate cupboards for each member, attached bathrooms and free wifi" data-description="Cozy 2-seater room available! Perfect for two, with a comfortable setup and a great location. Ideal for students or professionals. Contact for details!" data-owner="Sign up to view more details ...">
+          <div class="property-img-wrap">
+            <img src="../Images/apartment-1.jpg" alt="Gulberg inn hotel" />
+            <span class="property-badge hot">Hot</span>
+          </div>
+          <div class="property-info">
+            <div class="property-title">Gulberg inn hotel</div>
+            <div class="property-price">
+              PKR 18000 <span class="property-period">(Per Day)</span>
+            </div>
+            <div class="property-location">Gulberg, Lahore</div>
+            <a href="#" class="property-btn book-now-btn">Book now <span>&#8594;</span></a>
+          </div>
+        </div>
+        <div class="property-card" data-type="apartment" data-city="lahore" data-title="Gulberg real estate apartment" data-price="25000" data-period="Per Day" data-location="Gulberg, Lahore" data-img="../Images/apartment-2.jpg" data-features="Luxury rooms with free electricity, separate cupboards for each member, attached bathrooms and free wifi" data-description="Cozy 2-seater room available! Perfect for two, with a comfortable setup and a great location. Ideal for students or professionals. Contact for details!" data-owner="Sign up to view more details ...">
+          <div class="property-img-wrap">
+            <img src="../Images/apartment-2.jpg" alt="Gulberg real estate apartment" />
+            <span class="property-badge hot">Hot</span>
+          </div>
+          <div class="property-info">
+            <div class="property-title">Gulberg real estate apartment</div>
+            <div class="property-price">
+              PKR 25000 <span class="property-period">(Per Day)</span>
+            </div>
+            <div class="property-location">Gulberg, Lahore</div>
+            <a href="#" class="property-btn book-now-btn">Book now <span>&#8594;</span></a>
+          </div>
+        </div>
+        <div class="property-card" data-type="apartment" data-city="lahore" data-title="Apartment 2 rooms" data-price="15000" data-period="Per Month" data-location="Johar Town, Lahore" data-img="../Images/apartment-3.jpg" data-features="Luxury rooms with free electricity, separate cupboards for each member, attached bathrooms and free wifi" data-description="Cozy 2-seater room available! Perfect for two, with a comfortable setup and a great location. Ideal for students or professionals. Contact for details!" data-owner="Sign up to view more details ...">
+          <div class="property-img-wrap">
+            <img src="../Images/apartment-3.jpg" alt="Apartment 2 rooms" />
+            <span class="property-badge hot">Hot</span>
+          </div>
+          <div class="property-info">
+            <div class="property-title">Apartment 2 rooms</div>
+            <div class="property-price">
+              PKR 15000 <span class="property-period">(Per Month)</span>
+            </div>
+            <div class="property-location">Johar Town, Lahore</div>
+            <a href="#" class="property-btn book-now-btn">Book now <span>&#8594;</span></a>
+          </div>
+        </div>
+        <div class="property-card" data-type="apartment" data-city="abbottabad" data-title="The Heights Nathiagali" data-price="16000" data-period="Per Day" data-location="Nathia Gali, Abbottabad" data-img="../Images/apartment-4.jpg" data-features="Luxury rooms with free electricity, separate cupboards for each member, attached bathrooms and free wifi" data-description="Cozy 2-seater room available! Perfect for two, with a comfortable setup and a great location. Ideal for students or professionals. Contact for details!" data-owner="Sign up to view more details ...">
+          <div class="property-img-wrap">
+            <img src="../Images/apartment-4.jpg" alt="The Heights Nathiagali" />
+            <span class="property-badge hot">Hot</span>
+          </div>
+          <div class="property-info">
+            <div class="property-title">The Heights Nathiagali</div>
+            <div class="property-price">
+              PKR 16000 <span class="property-period">(Per Day)</span>
+            </div>
+            <div class="property-location">Nathia Gali, Abbottabad</div>
+            <a href="#" class="property-btn book-now-btn">Book now <span>&#8594;</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="get-started-section">
+    <div class="get-started-content">
+      <h2>Ready to get started</h2>
+      <p>
+        It's safe to book online with us! Get your dream stay in clicks or
+        drop us a line with your questions.
+      </p>
+      <div class="get-started-buttons">
+        <a href="../Rooms/rooms.html" class="get-started-btn primary">Book Now</a>
+        <a href="../About/about.html" class="get-started-btn secondary">About Us</a>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-main">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <h3>Hire My Room</h3>
+                <p class="tagline">Where Renting Feels Right.</p>
+                <a href="../Home/index.html" class="footer-link">Read more &rarr;</a>
+            </div>
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="">Review</a></li>
+                    <li><a href="../Blog/blog.html">Blog</a></li>
+                    <li><a href="../About/about.html">About</a></li>
+                    <li><a href="../Rooms/rooms.html">Rooms</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Types</h3>
+                <div class="types">
+                    <span class="type-btn">Apartment</span>
+                    <span class="type-btn">Room</span>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Subscribe</h3>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Enter email address">
+                    <button type="submit" class="subscribe-btn" aria-label="Send">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M2 21l21-9-21-9v7l15 2-15 2z" />
+                        </svg>
+                    </button>
+                </form>
+                <div class="footer-social">
+                    <span>Follow us</span>
+                    <div class="social-icons">
+                        <a href="https://twitter.com/" class="icon-x" aria-label="X">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M17.53 6.47a.75.75 0 0 0-1.06 0L12 10.94 7.53 6.47a.75.75 0 1 0-1.06 1.06L10.94 12l-4.47 4.47a.75.75 0 1 0 1.06 1.06L12 13.06l4.47 4.47a.75.75 0 0 0 1.06-1.06L13.06 12l4.47-4.47a.75.75 0 0 0 0-1.06z" />
+                            </svg>
+                        </a>
+                        <a href="https://facebook.com/" class="icon-fb" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0" />
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/" class="icon-ig" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.241 1.308 3.608.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.241 1.246-3.608 1.308-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.241-1.308-3.608C2.175 15.747 2.163 15.367 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608C4.515 2.497 5.782 2.225 7.148 2.163 8.414 2.105 8.794 2.163 12 2.163zm0-2.163C8.741 0 8.332.012 7.052.07 5.771.128 4.659.334 3.678 1.315c-.98.98-1.187 2.092-1.245 3.373C2.012 5.668 2 6.077 2 12c0 5.923.012 6.332.07 7.612.058 1.281.265 2.393 1.245 3.373.98.98 2.092 1.187 3.373 1.245C8.332 23.988 8.741 24 12 24s3.668-.012 4.948-.07c1.281-.058 2.393-.265 3.373-1.245.98-.98 1.187-2.092 1.245-3.373.058-1.28.07-1.689.07-7.612 0-5.923-.012-6.332-.07-7.612-.058-1.281-.265-2.393-1.245-3.373-.98-.98-2.092-1.187-3.373-1.245C15.668.012 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container footer-bottom-container">
+            <p>Copyright © 2025 All rights reserved | <span class="footer-heart">&#10084;</span> hiremyroom.com</p>
+            <div class="footer-links">
+                <a href="">Terms</a>
+                <a href="">Privacy</a>
+                <a href="">Compliances</a>
+            </div>
+        </div>
+    </div>
+</footer>
+  <script src="main.js"></script>
+  <script>
+    window.addEventListener('scroll', function () {
+        const hero = document.querySelector('.hero');
+        if (!hero) return;
+        const scrolled = window.pageYOffset;
+        hero.style.backgroundPosition = 'center ' + (scrolled * 0.4) + 'px';
+    });
+
+    // Animate hero-left on page load
+    window.addEventListener('DOMContentLoaded', function () {
+        var heroLeft = document.querySelector('.hero-left');
+        if (heroLeft) {
+            setTimeout(function () {
+                heroLeft.classList.add('animated');
+            }, 200);
+        }
+
+        // Animate social icons when in view
+        var icons = document.querySelectorAll('.social-icons a');
+        var iconsAnimated = false;
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting && !iconsAnimated) {
+                    icons.forEach(function (icon, i) {
+                        setTimeout(function () {
+                            icon.classList.add('animated');
+                        }, i * 200);
+                    });
+                    iconsAnimated = true;
+                }
+            });
+        }, { threshold: 0.3 });
+
+        if (icons.length) {
+            observer.observe(icons[0].parentElement);
+        }
+    });
+  </script>
+  <a href="https://api.whatsapp.com/send/?phone=923228441665&text=I%27m+interested+in+your+property+for+rent&type=phone_number&app_absent=0"
+    class="whatsapp-float-btn" target="_blank">
+    <svg viewBox="0 0 32 32" class="wa-icon">
+      <path
+        d=" M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.244-.73.244-1.088 0-.058 0-.144-.03-.215-.1-.172-2.434-1.39-2.678-1.39zm-2.908 7.593c-1.747 0-3.48-.53-4.942-1.49L7.793 24.41l1.132-3.337a8.955 8.955 0 0 1-1.72-5.272c0-4.955 4.04-8.995 8.997-8.995S25.2 10.845 25.2 15.8c0 4.958-4.04 8.998-8.998 8.998zm0-19.798c-5.96 0-10.8 4.842-10.8 10.8 0 1.964.53 3.898 1.546 5.574L5 27.176l5.974-1.92a10.807 10.807 0 0 0 16.03-9.455c0-5.958-4.842-10.8-10.802-10.8z"
+        fill="#fff"></path>
+    </svg>
+    <span>Chat on WhatsApp</span>
+  </a>
+</body>
+
+</html>

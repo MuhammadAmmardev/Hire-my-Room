@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hire my Room</title>
+    <link rel="stylesheet" href="rooms.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <span>Phone no: <a href="tel:+923228441665">+923228441665</a> or email us: <a
+                href="mailto:info@hiremyroom.com">info@hiremyroom.com</a></span>
+    </div>
+    <!-- Header/Nav -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo"><span>Hire my <span class="blue">Room</span></span></div>
+            <button class="menu-toggle" aria-label="Open menu">&#9776; MENU</button>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="../Home/index.html">Home</a></li>
+                    <li><a href="" class="active">Rooms</a></li>
+                    <li><a href="../Apartments/apartment.html">Apartments</a></li>
+                    <li><a href="../Blog/blog.html">Blog</a></li>
+                    <li><a href="../About/about.html">About</a></li>
+                    <li><a href="../Login/login.html">Login</a></li>
+                    <li><a href="../SignUp/SignUp.html">Sign up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-bg"></div>
+        <div class="container hero-content">
+            <h1 class="hero-title">ROOMS</h1>
+            
+            <!-- Search Section -->
+            <div class="search-section">
+                <h2 class="search-title">Search for Room</h2>
+                <form class="search-form" onsubmit="event.preventDefault(); filterRooms();">
+                    <div class="search-row">
+                        <div class="search-group">
+                            <select id="searchType">
+                                <option value="all">all</option>
+                                <option value="Room">Room</option>
+                                <option value="Apartment">Apartment</option>
+                            </select>
+                        </div>
+                        <div class="search-group">
+                            <select id="searchCity">
+                                <option value="all">all</option>
+                                <option value="New York City">New York City</option>
+                                <option value="Los Angeles">Los Angeles</option>
+                                <option value="Chicago">Chicago</option>
+                                <option value="Houston">Houston</option>
+                                <option value="Phoenix">Phoenix</option>
+                                <option value="Philadelphia">Philadelphia</option>
+                                <option value="San Antonio">San Antonio</option>
+                                <option value="San Diego">San Diego</option>
+                                <option value="Dallas">Dallas</option>
+                                <option value="San Jose">San Jose</option>
+                                <option value="Austin">Austin</option>
+                                <option value="Jacksonville">Jacksonville</option>
+                                <option value="Fort Worth">Fort Worth</option>
+                                <option value="Columbus">Columbus</option>
+                                <option value="Charlotte">Charlotte</option>
+                                <option value="San Francisco">San Francisco</option>
+                                <option value="Indianapolis">Indianapolis</option>
+                                <option value="Seattle">Seattle</option>
+                                <option value="Denver">Denver</option>
+                                <option value="Washington, D.C.">Washington, D.C.</option>
+                                <option value="Nashville">Nashville</option>
+                                <option value="Oklahoma City">Oklahoma City</option>
+                                <option value="Boston">Boston</option>
+                                <option value="El Paso">El Paso</option>
+                                <option value="Portland">Portland</option>
+                                <option value="Las Vegas">Las Vegas</option>
+                                <option value="Memphis">Memphis</option>
+                                <option value="Detroit">Detroit</option>
+                                <option value="Louisville">Louisville</option>
+                                <option value="Baltimore">Baltimore</option>
+                                <option value="Milwaukee">Milwaukee</option>
+                                <option value="Albuquerque">Albuquerque</option>
+                                <option value="Tucson">Tucson</option>
+                                <option value="Fresno">Fresno</option>
+                                <option value="Mesa">Mesa</option>
+                                <option value="Sacramento">Sacramento</option>
+                                <option value="Atlanta">Atlanta</option>
+                                <option value="Kansas City">Kansas City</option>
+                                <option value="Colorado Springs">Colorado Springs</option>
+                                <option value="Omaha">Omaha</option>
+                                <option value="Raleigh">Raleigh</option>
+                                <option value="Miami">Miami</option>
+                                <option value="Long Beach">Long Beach</option>
+                                <option value="Virginia Beach">Virginia Beach</option>
+                                <option value="Oakland">Oakland</option>
+                                <option value="Minneapolis">Minneapolis</option>
+                                <option value="Tulsa">Tulsa</option>
+                                <option value="Tampa">Tampa</option>
+                                <option value="Arlington">Arlington</option>
+                                <option value="New Orlean">New Orlean</option>
+                            </select>
+                        </div>
+                        <div class="search-group">
+                            <select id="searchPrice">
+                                <option value="all">all</option>
+                                <option value="high-low">High to low</option>
+                                <option value="low-high">Low to high</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="search-btn">SEARCH</button>
+                    </div>
+                </form>
+                <div class="search-bar">
+                    <input type="text" id="searchText" placeholder="Search by destination, cities and price" />
+                    <button type="button" class="search-icon" onclick="filterRooms()">&#128269;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Content Section -->
+    <section class="main-content">
+        <div class="container">
+    
+            <div class="rooms-grid" id="roomsGrid"></div>
+
+            <div class="pagination" id="pagination"></div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-main">
+            <div class="container footer-container">
+                <div class="footer-col">
+                    <h3>Hire My Room</h3>
+                    <p class="tagline">Where Renting Feels Right.</p>
+                    <a href="../Home/index.html" class="footer-link">Read more &rarr;</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="">Review</a></li>
+                        <li><a href="../Blog/blog.html">Blog</a></li>
+                        <li><a href="../About/about.html">About</a></li>
+                        <li><a href="../Rooms/rooms.html">Rooms</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Types</h3>
+                    <div class="types">
+                        <span class="type-btn">Apartment</span>
+                        <span class="type-btn">Room</span>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Subscribe</h3>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Enter email address">
+                        <button type="submit" class="subscribe-btn" aria-label="Send">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M2 21l21-9-21-9v7l15 2-15 2z" />
+                            </svg>
+                        </button>
+                    </form>
+                    <div class="footer-social">
+                        <span>Follow us</span>
+                        <div class="social-icons">
+                            <a href="https://twitter.com/" class="icon-x" aria-label="X">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M17.53 6.47a.75.75 0 0 0-1.06 0L12 10.94 7.53 6.47a.75.75 0 1 0-1.06 1.06L10.94 12l-4.47 4.47a.75.75 0 1 0 1.06 1.06L12 13.06l4.47 4.47a.75.75 0 0 0 1.06-1.06L13.06 12l4.47-4.47a.75.75 0 0 0 0-1.06z" />
+                                </svg>
+                            </a>
+                            <a href="https://facebook.com/" class="icon-fb" aria-label="Facebook">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0" />
+                                </svg>
+                            </a>
+                            <a href="https://instagram.com/" class="icon-ig" aria-label="Instagram">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.241 1.308 3.608.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.241 1.246-3.608 1.308-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.241-1.308-3.608C2.175 15.747 2.163 15.367 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608C4.515 2.497 5.782 2.225 7.148 2.163 8.414 2.105 8.794 2.163 12 2.163zm0-2.163C8.741 0 8.332.012 7.052.07 5.771.128 4.659.334 3.678 1.315c-.98.98-1.187 2.092-1.245 3.373C2.012 5.668 2 6.077 2 12c0 5.923.012 6.332.07 7.612.058 1.281.265 2.393 1.245 3.373.98.98 2.092 1.187 3.373 1.245C8.332 23.988 8.741 24 12 24s3.668-.012 4.948-.07c1.281-.058 2.393-.265 3.373-1.245.98-.98 1.187-2.092 1.245-3.373.058-1.28.07-1.689.07-7.612 0-5.923-.012-6.332-.07-7.612-.058-1.281-.265-2.393-1.245-3.373-.98-.98-2.092-1.187-3.373-1.245C15.668.012 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container footer-bottom-container">
+            <p>Copyright © 2025 All rights reserved | <span class="footer-heart">&#10084;</span> hiremyroom.com</p>
+            <div class="footer-links">
+                <a href="">Terms</a>
+                <a href="">Privacy</a>
+                <a href="">Compliances</a>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script>
+
+        const rooms = [
+            {
+                id: 1,
+                title: "Hotel Bilal",
+                city: "Karachi",
+                area: "Liaqatabad",
+                price: "PKR 7000",
+                period: "Per Day",
+                type: "Room",
+                image: "../Images/hotel_bilal(1).jpg",
+                badge: "Super Hot",
+                badgeType: "super-hot"
+            },
+            {
+                id: 2,
+                title: "Married Couple Room - Hotel Bilal",
+                city: "Karachi",
+                area: "Liaqatabad",
+                price: "PKR 9000",
+                period: "Per Day",
+                type: "Room",
+                image: "../Images/hotel_bilal.jpg",
+                badge: "Couple",
+                badgeType: "married"
+            },
+            {
+                id: 3,
+                title: "The Heights Nathiagali",
+                city: "Abbottabad",
+                area: "Nathia Gali",
+                price: "PKR 10000",
+                period: "Per Day",
+                type: "Room",
+                image: "../Images/Nathiagali-1.jpg",
+                badge: "VVIP",
+                badgeType: "vvip"
+            },
+            {
+                id: 4,
+                title: "VVIP Room - The Heights Nathiagali",
+                city: "Abbottabad",
+                area: "Nathia Gali",
+                price: "PKR 18000",
+                period: "Per Day",
+                type: "Room",
+                image: "../Images/Nathiagali-2.jpg",
+                badge: "VVIP",
+                badgeType: "vvip"
+            },
+            {
+                id: 5,
+                title: "The Heights Nathiagali",
+                city: "Abbottabad",
+                area: "Nathia Gali",
+                price: "PKR 16000",
+                period: "Per Day",
+                type: "Room",
+                image: "../Images/Nathiagali-3.jpg",
+                badge: "Super Hot",
+                badgeType: "super-hot"
+            },
+            {
+                id: 6,
+                title: "3 seater luxury rooms available",
+                city: "Lahore",
+                area: "Johar Town",
+                price: "PKR 13000",
+                period: "Per Month",
+                type: "Room",
+                image: "../Images/3-seat-luxury.jpg",
+                badge: "Super Hot",
+                badgeType: "super-hot"
+            },
+            {
+                id: 7,
+                title: "Apartment 2 rooms",
+                city: "Lahore",
+                area: "Johar Town",
+                price: "PKR 15000",
+                period: "Per Month",
+                type: "Apartment",
+                image: "../Images/apartment-2-room.jpg",
+                badge: "Hot",
+                badgeType: "hot"
+            },
+            {
+                id: 8,
+                title: "Family Room",
+                city: "Lahore",
+                area: "Johar Town",
+                price: "PKR 6500",
+                period: "Per Day",
+                type: "Room",
+                image: "../Images/family-room.jpg",
+                badge: "Hot",
+                badgeType: "hot"
+            },
+            {
+                id: 9,
+                title: "02 Seater Room with Attached Bath",
+                city: "Lahore",
+                area: "Johar Town",
+                price: "PKR 14000",
+                period: "Per Month",
+                type: "Room",
+                image: "../Images/2-seater-room.jpg",
+                badge: "Hot",
+                badgeType: "hot"
+            },
+            {
+                id: 10,
+                title: "The Luxury Girls Hostel",
+                city: "Lahore",
+                area: "Gulberg",
+                price: "PKR 7000",
+                period: "Per Day",
+                type: "Room",
+                image: "../Images/luxury-hostel.jpg",
+                badge: "Hot",
+                badgeType: "hot"
+            },
+            {
+                id: 11,
+                title: "subhan boys hostel 3 seater room",
+                city: "Lahore",
+                area: "Thokar niaz baig",
+                price: "PKR 12000",
+                period: "Per Month",
+                type: "Room",
+                image: "../Images/subhan-boys-hostel.jpg",
+                badge: "Hot",
+                badgeType: "hot"
+            },
+            {
+                id: 12,
+                title: "Imperial Boys Hostel, 3rd Floor",
+                city: "Lahore",
+                area: "Johar Town",
+                price: "PKR 12000",
+                period: "Per Month",
+                type: "Room",
+                image: "../Images/imperial-boys-hostel.jpg",
+                badge: "Hot",
+                badgeType: "hot"
+            },
+            {
+                id: 13,
+                title: "aisha girls hostel",
+                city: "Lahore",
+                area: "Johar Town",
+                price: "PKR 6000",
+                period: "Per Month",
+                type: "Room",
+                image: "../Images/aisha-hostel-1.jpg",
+                badge: "New",
+                badgeType: "new"
+            },
+            {
+                id: 14,
+                title: "aisha girls hostel",
+                city: "Lahore",
+                area: "Johar Town",
+                price: "PKR 6000",
+                period: "Per Month",
+                type: "Room",
+                image: "../Images/aisha-hostel-2.jpg",
+                badge: "New",
+                badgeType: "new"
+            },
+            {
+                id: 15,
+                title: "aisha girls hostel",
+                city: "Lahore",
+                area: "Johar Town",
+                price: "PKR 8000",
+                period: "Per Month",
+                type: "Room",
+                image: "../Images/aisha-hostel-3.jpg",
+                badge: "New",
+                badgeType: "new"
+            },
+            {
+                id: 16,
+                title: "aisha girls hostel",
+                city: "Lahore",
+                area: "Johar Town",
+                price: "PKR 15000",
+                period: "Per Month",
+                type: "Room",
+                image: "../Images/aisha-hostel-4.jpg",
+                badge: "New",
+                badgeType: "new"
+            },
+            {
+                id: 17,
+                title: "aisha girls hostel",
+                city: "Lahore",
+                area: "Johar Town",
+                price: "PKR 10000",
+                period: "Per Month",
+                type: "Room",
+                image: "../Images/aisha-hostel-5.jpg",
+                badge: "New",
+                badgeType: "new"
+            },
+            {
+                id: 18,
+                title: "aisha girls hostel",
+                city: "Lahore",
+                area: "Johar Town",
+                price: "PKR 10000",
+                period: "Per Month",
+                type: "Room",
+                image: "../Images/a.jpg",
+                badge: "New",
+                badgeType: "new"
+            }
+        ];
+
+        const roomsPerPage = 6;
+        let currentPage = 1;
+        let filteredRooms = rooms;
+
+        function renderRooms() {
+            const roomsGrid = document.getElementById("roomsGrid");
+            roomsGrid.innerHTML = "";
+            
+            const start = (currentPage - 1) * roomsPerPage;
+            const end = start + roomsPerPage;
+            const pageRooms = filteredRooms.slice(start, end);
+            
+            if (pageRooms.length === 0) {
+                roomsGrid.innerHTML = "<p class='no-rooms'>No rooms found matching your criteria.</p>";
+                return;
+            }
+            
+            pageRooms.forEach((room) => {
+                const card = document.createElement("div");
+                card.className = "room-card";
+                card.setAttribute('data-title', room.title);
+                card.setAttribute('data-price', room.price);
+                card.setAttribute('data-period', room.period);
+                card.setAttribute('data-location', room.area + ', ' + room.city);
+                card.setAttribute('data-img', room.image);
+                card.setAttribute('data-features', room.badge || '');
+                card.setAttribute('data-description', ''); // Add description if available
+                card.setAttribute('data-owner', ''); // Add owner if available
+                card.innerHTML = `
+                    <div class="room-img-wrap">
+                        <img src="${room.image}" alt="${room.title}" />
+                        <span class="room-badge ${room.badgeType}">${room.badge}</span>
+                    </div>
+                    <div class="room-info">
+                        <div class="room-title">${room.title}</div>
+                        <div class="room-price">
+                            ${room.price} <span class="room-period">(${room.period})</span>
+                        </div>
+                        <div class="room-location">${room.area}, ${room.city}</div>
+                        <a href="#" class="book-now-btn">Book now &rarr;</a>
+                    </div>
+                `;
+                roomsGrid.appendChild(card);
+            });
+        }
+
+        function renderPagination() {
+            const paginationDiv = document.getElementById("pagination");
+            paginationDiv.innerHTML = "";
+            
+            const totalPages = Math.ceil(filteredRooms.length / roomsPerPage);
+            if (totalPages <= 1) return;
+            
+            for (let i = 1; i <= totalPages; i++) {
+                const btn = document.createElement("button");
+                btn.textContent = i;
+                btn.className = i === currentPage ? "active" : "";
+                btn.onclick = () => {
+                    currentPage = i;
+                    renderRooms();
+                    renderPagination();
+                };
+                paginationDiv.appendChild(btn);
+            }
+        }
+
+        function filterRooms() {
+            const type = document.getElementById("searchType").value.toLowerCase();
+            const city = document.getElementById("searchCity").value.toLowerCase();
+            const priceSort = document.getElementById("searchPrice").value;
+            const searchText = document.getElementById("searchText").value.toLowerCase();
+            
+            // Filter rooms - only show rooms by default, not apartments
+            filteredRooms = rooms.filter((room) => {
+                const typeMatch = type === "all" || room.type.toLowerCase().includes(type);
+                const cityMatch = city === "all" || room.city.toLowerCase().includes(city);
+                const textMatch = searchText === "" || 
+                    room.title.toLowerCase().includes(searchText) ||
+                    room.city.toLowerCase().includes(searchText) ||
+                    room.area.toLowerCase().includes(searchText) ||
+                    room.price.toLowerCase().includes(searchText);
+                
+                // If type is "all", only show rooms (not apartments)
+                if (type === "all") {
+                    return room.type === "Room" && cityMatch && textMatch;
+                }
+                
+                return typeMatch && cityMatch && textMatch;
+            });
+            
+            if (priceSort === "high-low") {
+                filteredRooms.sort((a, b) => {
+                    const priceA = parseInt(a.price.replace(/\D/g, ""));
+                    const priceB = parseInt(b.price.replace(/\D/g, ""));
+                    return priceB - priceA;
+                });
+            } else if (priceSort === "low-high") {
+                filteredRooms.sort((a, b) => {
+                    const priceA = parseInt(a.price.replace(/\D/g, ""));
+                    const priceB = parseInt(b.price.replace(/\D/g, ""));
+                    return priceA - priceB;
+                });
+            }
+            
+            currentPage = 1;
+            renderRooms();
+            renderPagination();
+        }
+
+        // Initialize on page load
+        document.addEventListener("DOMContentLoaded", () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const category = urlParams.get('category');
+            let customFilter = null;
+            if (category) {
+                // Map category to dropdown value and heading
+                const categoryMap = {
+                    normal: { type: 'Room', heading: 'Normal Rooms' },
+                    luxury: { type: 'Room', heading: 'Luxury Rooms', badge: 'super-hot' },
+                    vip: { type: 'Room', heading: 'VIP Rooms', badge: 'vip' },
+                    vvip: { type: 'Room', heading: 'VVIP Rooms', badge: 'vvip' },
+                    married_couple: { type: 'Room', heading: 'Married Couple Rooms', keyword: 'married' },
+                    apartment: { type: 'Apartment', heading: 'Apartments' }
+                };
+                const cat = categoryMap[category.toLowerCase()];
+                if (cat) {
+
+                    document.getElementById('searchType').value = cat.type;
+                    // Set heading
+                    const heroTitle = document.querySelector('.hero-title');
+                    if (heroTitle) heroTitle.textContent = cat.heading;
+                    // Custom filter for badge or keyword
+                    customFilter = cat;
+                }
+            }
+
+            if (customFilter) {
+                filteredRooms = rooms.filter(room => {
+                    if (customFilter.type && room.type !== customFilter.type) return false;
+                    if (customFilter.badge && room.badgeType !== customFilter.badge) return false;
+                    if (customFilter.keyword && !room.title.toLowerCase().includes(customFilter.keyword)) return false;
+                    if (category === 'normal') {
+                        // Normal rooms: not super-hot, not vip, not vvip, not married
+                        return !['super-hot', 'vip', 'vvip'].includes(room.badgeType) && !room.title.toLowerCase().includes('married');
+                    }
+                    return true;
+                });
+                currentPage = 1;
+                renderRooms();
+                renderPagination();
+            } else {
+                filterRooms();
+                renderPagination();
+            }
+
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mainNav = document.getElementById('main-nav');
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                });
+            }
+            function handleResize() {
+            if (window.innerWidth <= 990) {
+                menuToggle.style.display = 'block';
+            } else {
+                menuToggle.style.display = 'none';
+                mainNav.classList.remove('active');
+            }
+        }
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        });
+
+        // Original scroll and animation code
+        window.addEventListener('scroll', function () {
+            const hero = document.querySelector('.hero');
+            if (!hero) return;
+            const scrolled = window.pageYOffset;
+            hero.style.backgroundPosition = 'center ' + (scrolled * 0.4) + 'px';
+        });
+
+        // Animate hero-left on page load
+        window.addEventListener('DOMContentLoaded', function () {
+            var heroLeft = document.querySelector('.hero-left');
+            if (heroLeft) {
+                setTimeout(function () {
+                    heroLeft.classList.add('animated');
+                }, 200);
+            }
+
+            // Animate social icons when in view
+            var icons = document.querySelectorAll('.social-icons a');
+            var iconsAnimated = false;
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting && !iconsAnimated) {
+                        icons.forEach(function (icon, i) {
+                            setTimeout(function () {
+                                icon.classList.add('animated');
+                            }, i * 200);
+                        });
+                        iconsAnimated = true;
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            if (icons.length) {
+                observer.observe(icons[0].parentElement); 
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('roomsGrid').addEventListener('click', function(e) {
+    if (e.target.classList.contains('book-now-btn')) {
+      e.preventDefault();
+      const btn = e.target;
+      const card = btn.closest('.hot-room-card, .new-room-card, .property-card, .room-card');
+      if (!card) return;
+      const roomData = {
+        title: card.dataset.title,
+        price: card.dataset.price,
+        period: card.dataset.period,
+        location: card.dataset.location,
+        img: card.dataset.img,
+        features: card.dataset.features,
+        description: card.dataset.description,
+        owner: card.dataset.owner
+      };
+      localStorage.setItem('selectedRoom', JSON.stringify(roomData));
+      window.location.href = '../Home/roomDetail.html';
+    }
+  });
+});
+    </script>
+</body>
+
+</html>
